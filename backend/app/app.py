@@ -6,9 +6,11 @@ import psycopg2
 import psycopg2.extras
 
 from utils import calculate_growth_rates
+from flask_cors import CORS
 
 
 app = Flask(__name__)
+CORS(app)
 app.config['DEBUG'] = True
 
 DATABASE_NAME = 'os_db'
