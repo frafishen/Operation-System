@@ -36,131 +36,74 @@
 
   
 <script>
-import { ref } from "vue"
-import { ElTable, ElCard } from 'element-plus'
+import { ref, onMounted } from "vue";
+import { ElTable, ElCard } from 'element-plus';
 import { fetchMaterialOrders } from '@/api/MaterialOrderQueryAPI';
-// import axios from 'axios'
 
 export default {
   data() {
     return {
       materialOrders: [],
-      order_data,
+      order_data: {
+        id: "103301",
+        delivered_at: "2023-12-02"
+      },
+      stage_data: [
+        {
+          name: "Step 1",
+          description: "Some description",
+          active: "True"
+        },
+        {
+          name: "Step 2",
+          description: "Some description",
+          active: "True"
+        },
+        {
+          name: "Step 3",
+          description: "Some description",
+          active: "True"
+        },
+        {
+          name: "Step 4",
+          description: "Some description",
+          active: "True"
+        }
+      ],
+      lastActiveStageIndex: -1,
+      currentRow: null,
+      singleTableRef: null
     };
   },
-  async mounted() {
-    try {
-      this.materialOrders = await fetchMaterialOrders();
-    } catch (error) {
-      console.error('Error fetching material orders:', error);
+  methods: {
+    async fetchMaterialOrdersData() {
+      try {
+        this.materialOrders = await fetchMaterialOrders();
+      } catch (error) {
+        console.error('Error fetching material orders:', error);
+      }
+    },
+    judgeActiveStage() {
+      const activeStages = this.stage_data.filter(stage => stage.active === "True");
+
+      if (activeStages.length === 0) {
+        return null;
+      }
+
+      const lastActiveStage = activeStages[activeStages.length - 1];
+      this.lastActiveStageIndex = this.stage_data.lastIndexOf(lastActiveStage) + 1;
+      console.log(this.lastActiveStageIndex);
+    },
+    handleCurrentChange(val) {
+      this.currentRow = val;
+      console.log(val);
+      this.judgeActiveStage();
     }
+  },
+  mounted() {
+    this.fetchMaterialOrdersData();
   }
 };
-
-
-const order_data = ref({
-  id: "103301",
-  delivered_at: "2023-12-02"
-})
-
-const stage_data = ref([
-  {
-    name: "Step 1",
-    description: "Some description",
-    active: "True"
-  },
-  {
-    name: "Step 2",
-    description: "Some description",
-    active: "True"
-  },
-  {
-    name: "Step 3",
-    description: "Some description",
-    active: "True"
-  },
-  {
-    name: "Step 4",
-    description: "Some description",
-    active: "True"
-  }
-])
-
-const lastActiveStageIndex = ref(-1)
-
-// 表格
-const currentRow = ref();
-const singleTableRef = ref();
-
-// const tableData = [
-//   {
-//     material_order_id: '10384',
-//     material_name: '銅',
-//     quantity: '100',
-//     created_at: '2023-12-22',
-//     delivered_at: '2024-1-3',
-//     progress: '未完成'
-//   },
-//   {
-//     material_order_id: '10385',
-//     material_name: '鋁',
-//     quantity: '200',
-//     created_at: '2023-12-23',
-//     delivered_at: '2024-1-4',
-//     progress: '進行中'
-//   },
-//   {
-//     material_order_id: '10386',
-//     material_name: '鋼',
-//     quantity: '300',
-//     created_at: '2023-12-24',
-//     delivered_at: '2024-1-5',
-//     progress: '已完成'
-//   },
-//   {
-//     material_order_id: '10387',
-//     material_name: '錫',
-//     quantity: '400',
-//     created_at: '2023-12-25',
-//     delivered_at: '2024-1-6',
-//     progress: '延遲'
-//   }
-// ];
-
-//  function
-
-
-// const setCurrent = (row) => {
-//   singleTableRef.value.setCurrentRow(row);
-// };
-
-const judgeActiveStage = () => {
-  // 找到所有 active 屬性為 true 的 stage
-  const activeStages = stage_data.value.filter(stage => stage.active === "True");
-
-  // 如果沒有 active 屬性為 true 的階段，則返回 null 或者你認為合適的預設值
-  if (activeStages.length === 0) {
-    return null;
-  }
-
-  // 找到最後一個 active 屬性為 true 的階段
-  const lastActiveStage = ref(activeStages[activeStages.length - 1])
-  lastActiveStageIndex.value = stage_data.value.lastIndexOf(lastActiveStage.value) + 1;
-  console.log(lastActiveStageIndex.value)
-}
-
-const handleCurrentChange = (val) => {
-  currentRow.value = val;
-  console.log(val)
-  // 接stage data(上方有寫好的格式)
-
-
-  // 判斷 active 到哪
-  judgeActiveStage()
-
-
-};
-
 </script>
   
 <style>
