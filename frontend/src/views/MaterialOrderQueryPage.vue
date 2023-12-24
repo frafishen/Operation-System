@@ -15,7 +15,7 @@
   </el-card>
   <!--下方的表格-->
   <div class="table_part">
-    <el-table ref="singleTableRef" :data="tableData" highlight-current-row style="width: 100%"
+    <el-table ref="singleTableRef" :data="materialOrders" highlight-current-row style="width: 100%"
       @current-change="handleCurrentChange">
       <el-table-column type="index" width="50" />
       <el-table-column property="material_order_id" label="訂單編號" width="120" />
@@ -23,7 +23,7 @@
       <el-table-column property="quantity" label="訂單總額" />
       <el-table-column property="created_at" label="訂購日期" />
       <el-table-column property="delivered_at" label="交貨日期" />
-      <el-table-column property="progress" label="訂單進度" />
+      <!-- <el-table-column property="progress" label="訂單進度" /> -->
     </el-table>
     <!-- <div style="padding: 0.5% 2%;">
             <el-button @click="setCurrent(tableData[1])">Select second row</el-button>
@@ -32,12 +32,31 @@
   </div>
 </template>
   
+
+
   
-<script setup>
+<script>
 import { ref } from "vue"
 import { ElTable, ElCard } from 'element-plus'
 import { fetchMaterialOrders } from '@/api/MaterialOrderQueryAPI';
 // import axios from 'axios'
+
+export default {
+  data() {
+    return {
+      materialOrders: [],
+      order_data,
+    };
+  },
+  async mounted() {
+    try {
+      this.materialOrders = await fetchMaterialOrders();
+    } catch (error) {
+      console.error('Error fetching material orders:', error);
+    }
+  }
+};
+
 
 const order_data = ref({
   id: "103301",
@@ -73,42 +92,43 @@ const lastActiveStageIndex = ref(-1)
 const currentRow = ref();
 const singleTableRef = ref();
 
-const tableData = [
-  {
-    material_order_id: '10384',
-    material_name: '銅',
-    quantity: '100',
-    created_at: '2023-12-22',
-    delivered_at: '2024-1-3',
-    progress: '未完成'
-  },
-  {
-    material_order_id: '10385',
-    material_name: '鋁',
-    quantity: '200',
-    created_at: '2023-12-23',
-    delivered_at: '2024-1-4',
-    progress: '進行中'
-  },
-  {
-    material_order_id: '10386',
-    material_name: '鋼',
-    quantity: '300',
-    created_at: '2023-12-24',
-    delivered_at: '2024-1-5',
-    progress: '已完成'
-  },
-  {
-    material_order_id: '10387',
-    material_name: '錫',
-    quantity: '400',
-    created_at: '2023-12-25',
-    delivered_at: '2024-1-6',
-    progress: '延遲'
-  }
-];
+// const tableData = [
+//   {
+//     material_order_id: '10384',
+//     material_name: '銅',
+//     quantity: '100',
+//     created_at: '2023-12-22',
+//     delivered_at: '2024-1-3',
+//     progress: '未完成'
+//   },
+//   {
+//     material_order_id: '10385',
+//     material_name: '鋁',
+//     quantity: '200',
+//     created_at: '2023-12-23',
+//     delivered_at: '2024-1-4',
+//     progress: '進行中'
+//   },
+//   {
+//     material_order_id: '10386',
+//     material_name: '鋼',
+//     quantity: '300',
+//     created_at: '2023-12-24',
+//     delivered_at: '2024-1-5',
+//     progress: '已完成'
+//   },
+//   {
+//     material_order_id: '10387',
+//     material_name: '錫',
+//     quantity: '400',
+//     created_at: '2023-12-25',
+//     delivered_at: '2024-1-6',
+//     progress: '延遲'
+//   }
+// ];
 
 //  function
+
 
 // const setCurrent = (row) => {
 //   singleTableRef.value.setCurrentRow(row);
@@ -137,6 +157,8 @@ const handleCurrentChange = (val) => {
 
   // 判斷 active 到哪
   judgeActiveStage()
+
+
 };
 
 </script>
