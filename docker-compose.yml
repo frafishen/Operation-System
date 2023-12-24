@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: flask.dockerfile
+    command: python app.py
+    volumes:
+      - ./app:/app
+    ports:
+      - "5001:80"
+    environment:
+      - FLASK_ENV=development
+      - DATABASE_URL=postgresql://mis_g1:mis@db:5432/os_db
+    depends_on:
+      - db
+
+  db:
+    build:
+      context: .
+      dockerfile: init-schema-postgres.dockerfile
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=mis_g1
+      - POSTGRES_PASSWORD=mis
+      - POSTGRES_DB=os_db
+
+volumes:
+  postgres_data:
