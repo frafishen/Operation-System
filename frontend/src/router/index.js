@@ -1,8 +1,8 @@
 // router/index.js
 import { createRouter, createWebHistory } from 'vue-router';
 
-import MaterialOrderQueryPage from '../views/MaterialOrderQueryPage.vue'
-import TestPage from '../views/TestPage.vue'
+import MaterialOrderQueryPage from '@/views/MaterialOrderQueryPage.vue'
+import TestPage from '@/views/TestPage.vue'
 
 const routes = [
   { path: '/', name: 'TestPage', component: TestPage },

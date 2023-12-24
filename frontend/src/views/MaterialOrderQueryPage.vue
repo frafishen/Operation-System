@@ -36,6 +36,7 @@
 <script setup>
 import { ref } from "vue"
 import { ElTable, ElCard } from 'element-plus'
+import { fetchMaterialOrders } from '@/api/MaterialOrderQueryAPI';
 // import axios from 'axios'
 
 const order_data = ref({
