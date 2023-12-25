@@ -21,7 +21,7 @@
                     <template #title>
                         <el-icon><UserFilled /></el-icon>顧客關係管理
                     </template>
-                        <el-menu-item index="2-1">顧客資料查詢</el-menu-item>
+                        <el-menu-item index="/CustomerManPage">顧客資料查詢</el-menu-item>
                 </el-sub-menu>
             </el-menu>
         </el-scrollbar>

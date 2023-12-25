@@ -8,7 +8,7 @@
       </template>
       <!-- 統計圖表 -->
       <div>
-        <pieChart :chartData="chartData"/>
+        <LineChart :chartData="chartData"/>
       </div>
     </el-card>
     <!--下方的表格-->
@@ -27,7 +27,7 @@
   <script setup>
   import { ref } from "vue"
   import { ElTable, ElCard } from 'element-plus'
-  import pieChart from '@/components/LineChart.vue'
+  import LineChart from '@/components/LineChart.vue'
   
   const inv_data = ref({
     // 要根據選種不同row改變
