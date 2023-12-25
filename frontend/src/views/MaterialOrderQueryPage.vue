@@ -16,7 +16,7 @@
   <!--下方的表格-->
   <div class="table_part">
     <el-table ref="singleTableRef" :data="materialOrders" highlight-current-row style="width: 100%"
-      @current-change="handleCurrentChange">
+      @current-change="handleRowClick">
       <el-table-column type="index" width="50" />
       <el-table-column property="material_order_id" label="訂單編號" width="120" />
       <el-table-column property="material_name" label="原物料名稱" width="120" />
@@ -94,10 +94,30 @@ export default {
       this.lastActiveStageIndex = this.stage_data.lastIndexOf(lastActiveStage) + 1;
       console.log(this.lastActiveStageIndex);
     },
-    handleCurrentChange(val) {
-      this.currentRow = val;
-      console.log(val);
-      this.judgeActiveStage();
+    // handleCurrentChange(val) {
+    //   this.currentRow = val;
+    //   console.log(val);
+    //   this.judgeActiveStage();
+    // },
+    handleRowClick(row) {
+      this.order_data = row;
+      this.createStageData(row.progress);
+    },
+    createStageData(progress) {
+      const newStageData = Object.keys(progress).map((key, index) => {
+        return {
+          name: `Step ${index + 1}`,
+          description: progress[key],
+          active: progress[key].includes('order completed')
+        };
+      });
+
+      this.stage_data = newStageData;
+      this.updateLastActiveStageIndex();
+    },
+    updateLastActiveStageIndex() {
+      const lastIndex = this.stage_data.findIndex(stage => stage.active);
+      this.lastActiveStageIndex = lastIndex >= 0 ? lastIndex : 0;
     }
   },
   mounted() {
