@@ -3,7 +3,7 @@
   <el-card class="box-card is-plain">
     <template #header>
       <div class="card-header">
-        <span>訂單編號: {{ order_data.id }}</span>
+        <span>訂單編號: {{ order_data.material_order_id }}</span>
         <span>交貨日期: {{ order_data.delivered_at }}</span>
         <!-- <el-button class="button" text>Operation button</el-button> -->
       </div>
@@ -36,7 +36,6 @@
 
   
 <script>
-import { ref, onMounted } from "vue";
 import { ElTable, ElCard } from 'element-plus';
 import { fetchMaterialOrders } from '@/api/MaterialOrderQueryAPI';
 
@@ -45,7 +44,7 @@ export default {
     return {
       materialOrders: [],
       order_data: {
-        id: "103301",
+        material_order_id: "103301",
         delivered_at: "2023-12-02"
       },
       stage_data: [
@@ -102,6 +101,10 @@ export default {
     handleRowClick(row) {
       this.order_data = row;
       this.createStageData(row.progress);
+      this.order_data = {
+        material_order_id: row.material_order_id,
+        delivered_at: row.delivered_at
+      };
     },
     createStageData(progress) {
       const newStageData = Object.keys(progress).map((key, index) => {
