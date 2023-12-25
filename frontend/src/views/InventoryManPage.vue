@@ -3,12 +3,12 @@
     <el-card class="box-card is-plain">
       <template #header>
         <div class="card-header">
-          <span>料號: {{ order_data.id }} | 數量: {{ order_data.lead_time }}</span>
+          <span>料號: {{ currentRow.part_no }}  ｜  數量: {{ currentRow.inv_amount }}</span>
         </div>
       </template>
       <!-- 統計圖表 -->
       <div>
-        <pieChart />
+        <pieChart :chartData="chartData"/>
       </div>
     </el-card>
     <!--下方的表格-->
@@ -17,7 +17,7 @@
         @current-change="handleCurrentChange">
         <el-table-column type="index" width="50" />
         <el-table-column property="part_no" label="料號" />
-        <el-table-column property="inventory" label="庫存數量" />
+        <el-table-column property="inv_amount" label="庫存數量" />
         <el-table-column property="requirement" label="所需材料" />
       </el-table>
     </div>
@@ -29,22 +29,26 @@
   import { ElTable, ElCard } from 'element-plus'
   import pieChart from '@/components/LineChart.vue'
   
-  const order_data = ref({
-    id: "103301",
-    lead_time: "2023-12-02"
+  const inv_data = ref({
+    // 要根據選種不同row改變
+    part_no: ' ',
+    inv_amount: ' '
+  })
+
+  const chartData = ref({
+    xAxisData: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+    yAxisSales: [150, 230, 224, 218],
+    yAxisForcast: [150, 230, 224, 218, 135, 147, 260]
   })
   
- 
-  const lastActiveStageIndex = ref(-1)
-  
   // 表格
-  const currentRow = ref();
+  const currentRow = inv_data;
   const singleTableRef = ref();
   
   const tableData = [
     {
       part_no: '291029',
-      inventory: '100',
+      inv_amount: '100',
       requirement: '291022, 291021',
     }
   ];

@@ -17,6 +17,16 @@ import { LineChart } from 'echarts/charts';
 import { UniversalTransition } from 'echarts/features';
 import { CanvasRenderer } from 'echarts/renderers';
 
+const props = defineProps({
+  chartData: {
+    xAxisData: [],
+    yAxisSales: [],
+    yAxisForcast: []
+  }
+})
+
+
+
 // 使用相關模組
 echarts.use([
     TitleComponent,
@@ -39,9 +49,6 @@ onMounted(() => {
     if (chartRef.value) {
         const myChart = echarts.init(chartRef.value);
         const option = {
-            // title: {
-            //     text: '過去銷售額及未來預測',
-            // },
             tooltip: {
                 trigger: 'axis',
                 axisPointer: {
@@ -56,7 +63,7 @@ onMounted(() => {
             },
             xAxis: {
                 type: 'category',
-                data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+                data: props.chartData.xAxisData
             },
             yAxis: {
                 type: 'value',
@@ -70,13 +77,13 @@ onMounted(() => {
             series: [
                 {
                     name: 'Forcast',
-                    data: [150, 230, 224, 218, 135, 147, 260],
+                    data: props.chartData.yAxisForcast,
                     type: 'line',
                     color: 'rgba(255, 165, 0, 1)'
                 },
                 {
                     name: 'Sales',
-                    data: [150, 230, 224, 218],
+                    data: props.chartData.yAxisSales,
                     type: 'line',
                     color: 'rgba(0, 128, 255, 1)'
                 }
