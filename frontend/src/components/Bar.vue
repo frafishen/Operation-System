@@ -3,18 +3,18 @@
         <!-- 側欄 -->
         <el-aside>
         <el-scrollbar>
-            <el-menu :default-openeds="['1', '2']"> <!-- 預設開啟 -->
+            <el-menu router :default-openeds="['1', '2']"> <!-- 預設開啟 -->
                 <el-sub-menu index="1">
                     <template #title>
                         <el-icon><Tools /></el-icon>作業管理
                     </template>
                     <el-menu-item-group title="生產管理">
                         <el-menu-item index="1-1">生產訂單規劃</el-menu-item>
-                        <el-menu-item index="1-2">庫存管理</el-menu-item>
+                        <el-menu-item index="/InventoryManPage">庫存管理</el-menu-item>
                     </el-menu-item-group>
                     <el-menu-item-group title="資訊查詢">
-                        <el-menu-item index="1-3">原物料訂單進度查詢</el-menu-item>
-                        <el-menu-item index="1-4">料號訂單進度查詢</el-menu-item>
+                        <el-menu-item index="/MaterialOrderQueryPage">原物料訂單進度查詢</el-menu-item>
+                        <el-menu-item index="/PartNoOrderQueryPage">料號訂單進度查詢</el-menu-item>
                     </el-menu-item-group>
                 </el-sub-menu>
                 <el-sub-menu index="2">

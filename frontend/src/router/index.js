@@ -1,12 +1,15 @@
 // router/index.js
 import { createRouter, createWebHistory } from 'vue-router';
 
-import MaterialOrderQueryPage from '@/views/MaterialOrderQueryPage.vue'
-import TestPage from '@/views/TestPage.vue'
+import MaterialOrderQueryPage from '../views/MaterialOrderQueryPage.vue'
+import PartNoOrderQueryPage from '../views/PartNoOrderQueryPage.vue'
+import InventoryManPage from '../views/InventoryManPage.vue'
 
 const routes = [
-  { path: '/', name: 'TestPage', component: TestPage },
-  { path: '/material-order-query', name: 'MaterialOrderQueryPage', component: MaterialOrderQueryPage },
+  { path: '/', name: 'MaterialOrderQueryPage', component: PartNoOrderQueryPage },
+  { path: '/PartNoOrderQueryPage', name: 'PartNoOrderQueryPage', component: PartNoOrderQueryPage },
+  { path: '/InventoryManPage', name: 'InventoryManPage', component: InventoryManPage },
+  { path: '/MaterialOrderQueryPage', name: 'MaterialOrderQueryPage', component: MaterialOrderQueryPage },
 ];
 
 const router = createRouter({
