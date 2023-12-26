@@ -93,11 +93,6 @@ export default {
       this.lastActiveStageIndex = this.stage_data.lastIndexOf(lastActiveStage) + 1;
       console.log(this.lastActiveStageIndex);
     },
-    // handleCurrentChange(val) {
-    //   this.currentRow = val;
-    //   console.log(val);
-    //   this.judgeActiveStage();
-    // },
     handleRowClick(row) {
       this.order_data = row;
       this.createStageData(row.progress);

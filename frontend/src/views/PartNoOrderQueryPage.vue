@@ -28,21 +28,21 @@
         </el-card>
         <!--下方的表格-->
         <div class="table_part">
-            <el-table ref="singleTableRef" :data="tableData" highlight-current-row style="width: 100%"
-                @current-change="handleCurrentChange">
+            <el-table ref="singleTableRef" :data="productOrders" highlight-current-row style="width: 100%"
+                @current-change="handleRowClick">
                 <el-table-column type="index" width="50" />
-                <el-table-column property="order_number" label="訂單編號" width="120" />
-                <el-table-column property="part_no" label="料號" width="120" />
-                <el-table-column property="machine_type" label="機台" />
-                <el-table-column property="order_date" label="訂購日期" />
-                <el-table-column property="lead_time" label="交貨日期" />
+                <el-table-column property="order_id" label="訂單編號" width="120" />
+                <el-table-column property="product_name" label="料號" width="120" />
+                <el-table-column property="machine_id" label="機台" />
+                <el-table-column property="order_created_at" label="訂購日期" />
+                <el-table-column property="order_delivered_at" label="交貨日期" />
             </el-table>
         </div>
     </el-main>
 </template>
   
 
-<script setup>
+<!-- <script setup>
 import { ref } from "vue"
 import { ElTable, ElCard } from 'element-plus'
 import { Check } from '@element-plus/icons-vue'
@@ -93,8 +93,87 @@ const handleCurrentChange = (val) => {
     modifyProgress()
 };
 
+</script> -->
 
+<script>
+import { ElTable, ElCard } from 'element-plus';
+import { fetchProductOrders, fetchProductOrderProgress } from '@/api/PartNoOrderQueryAPI';
+
+export default {
+  data() {
+    return {
+      productOrders: [],
+      order_data: {
+        order_id: null,
+        product_id: null,
+        product_name: '',
+        machine_id: null,
+        order_created_at: '',
+        order_delivered_at: null
+      },
+      step_data: [
+        {
+          process: "建模",
+          percentage: 100
+        },
+        {
+          process: "製造",
+          percentage: 70
+        },
+        {
+          process: "運送",
+          percentage: 0
+        }
+      ],
+      currentRow: null,
+      singleTableRef: null
+    };
+  },
+  methods: {
+    async fetchProductOrdersData() {
+      try {
+        this.productOrders = await fetchProductOrders();
+      } catch (error) {
+        console.error('Error fetching product orders:', error);
+      }
+    },
+    async fetchAndUpdateOrderProgress(orderId, productId) {
+      try {
+        const progressData = await fetchProductOrderProgress(orderId, productId);
+        // Update step_data based on the fetched progress data
+        this.updateStepDataWithProgress(progressData);
+      } catch (error) {
+        console.error('Error fetching product order progress:', error);
+      }
+    },
+    updateStepDataWithProgress(progressData) {
+      if (progressData.length > 0) {
+        const currentStage = progressData[0].progress.stage;
+        const completeness = progressData[0].progress.completeness;
+
+        this.step_data.forEach((step, index) => {
+          if (index < currentStage) {
+            step.percentage = 100;
+          } else if (index === currentStage) {
+            step.percentage = completeness;
+          } else {
+            step.percentage = 0;
+          }
+        });
+      }
+    },
+    handleRowClick(row) {
+      this.order_data = { ...row };
+      this.fetchAndUpdateOrderProgress(row.order_id, row.product_id);
+    }
+  },
+  mounted() {
+    this.fetchProductOrdersData();
+  }
+};
 </script>
+
+
 
 <style>
 .main-part {
