@@ -69,7 +69,6 @@ def get_client():
 
 
 # CLIENT SEARCH BAR
-##################################################################
 @app.route('/client/<id>', methods=['GET'])
 def search_client(id):
     conn = get_db_connection()
@@ -79,13 +78,10 @@ def search_client(id):
         data = cursor.fetchall()
     result = [dict(row) for row in data]
     return jsonify(result)
-##################################################################
-##################################################################
 
 
 
 # PPT P.11
-##################################################################
 @app.route('/client/revenue/<id>', methods=['GET'])
 def get_company_revenue(id):
     conn = get_db_connection()
@@ -122,13 +118,10 @@ def get_average_purchase_interval(id):
     result = [dict(row) for row in data]
     
     return jsonify(result)
-##################################################################
-##################################################################
 
 
 
 # inventory
-##################################################################
 @app.route('/inventory', methods=['GET'])
 def get_inventory():
     conn = get_db_connection()
@@ -167,8 +160,6 @@ def get_material_consumption_prediction(id):
         data = cursor.fetchall()
     result = [dict(row) for row in data]
     return jsonify(result)
-##################################################################
-##################################################################
 
 
 
@@ -276,7 +267,4 @@ def get_material_order_progress(id, material_id):
     return jsonify(result)
 
 if __name__ == '__main__':
-#    from waitress import serve
-#    serve(app, host='0.0.0.0', port=80)
-#    app.run()
     app.run(host='0.0.0.0', port=80)
