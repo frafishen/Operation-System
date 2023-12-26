@@ -6,31 +6,36 @@
                 <span>客戶名稱: {{ currentRow.name }}</span>
             </div>
         </template>
-    <!-- 統計圖表 -->
-    <div class="chart-container">
-        <BarChart :chartData="chartData_LHS" />
-        <LineChart :chartData="chartData_RHS" />
+        <!-- 統計圖表 -->
+        <div class="chart-container">
+            <BarChart :chartData="chartData_LHS" />
+            <LineChart :chartData="chartData_RHS" />
+        </div>
+    </el-card>
+    <!--下方的表格-->
+    <div :class="table_part">
+        <el-table ref="singleTableRef" :data="filterTableData" highlight-current-row style="width: 100%"
+            @current-change="handleCurrentChange">
+            <el-table-column type="index" width="50" />
+            <el-table-column property="cus_id" label="ID" />
+            <el-table-column property="name" label="姓名" />
+            <el-table-column property="mail" label="email" />
+            <el-table-column property="date" label="最近購買日期" />
+            <el-table-column sortable property="clv" label="終身價值" />
+            <el-table-column>
+                <template #header>
+                    <el-input v-model="search" size="small" placeholder="Type to search" /> <!--Search by name-->
+                </template>
+            </el-table-column>
+        </el-table>
+        <div class="button-container">
+            <el-button @click="clear()">Clear selection</el-button>
+        </div>
     </div>
-</el-card>
-<!--下方的表格-->
-<div :class="table_part">
-    <el-table ref="singleTableRef" :data="tableData" highlight-current-row style="width: 100%"
-        @current-change="handleCurrentChange">
-        <el-table-column type="index" width="50" />
-        <el-table-column property="cus_id" label="ID" />
-        <el-table-column property="name" label="姓名" />
-        <el-table-column property="mail" label="email" />
-        <el-table-column property="date" label="最近購買日期" />
-        <el-table-column sortable property="clv" label="終身價值" />
-    </el-table>
-    <div class="button-container">
-        <el-button @click="clear()">Clear selection</el-button>
-    </div>
-</div> 
 </template>
 
 <script setup>
-import { ref } from "vue"
+import { ref, computed } from "vue"
 import { ElTable, ElCard } from 'element-plus'
 import BarChart from '@/components/BarChartWithLine.vue'
 import LineChart from '@/components/LineChartForCus.vue'
@@ -51,8 +56,16 @@ const chartData_RHS = ref({
 const currentRow = ref()
 const singleTableRef = ref()
 
-const table_part = ref('table_part')
+const table_part = ref('table_part') //for css class 切換
 
+const search = ref('')
+const filterTableData = computed(() =>
+  tableData.filter(
+    (data) =>
+      !search.value ||
+      data.name.toLowerCase().includes(search.value.toLowerCase())
+  )
+)
 
 const tableData = [
     {
