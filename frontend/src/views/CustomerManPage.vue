@@ -1,117 +1,84 @@
 <template>
     <!--上方的進度圖-->
     <el-card class="box-card is-plain" v-if="currentRow">
-        <!-- <template #header>
+        <template #header>
             <div class="card-header">
-                <span>料號: {{ currentRow.part_no }} ｜ 數量: {{ currentRow.inv_amount }}</span>
+                <span>客戶名稱: {{ currentRow.name }}</span>
             </div>
-        </template> -->
-        <!-- 統計圖表 -->
-        <div>
-            <!-- <pieChart :chartData="chartData" /> -->
-        </div>
-    </el-card>
-    <!--下方的表格-->
-    <div :class="table_part">
-        <el-table ref="singleTableRef" :data="tableData" highlight-current-row style="width: 100%"
-            @current-change="handleCurrentChange">
-            <el-table-column type="index" width="50" />
-            <el-table-column property="cus_id" label="ID" />
-            <el-table-column property="name" label="姓名" />
-            <el-table-column property="mail" label="email" />
-            <el-table-column property="date" label="最近購買日期" />
-            <el-table-column property="clv" label="終身價值" />
-        </el-table>
-        <div class="button-container">
-            <el-button @click="clear()">Clear selection</el-button>
-        </div>
+        </template>
+    <!-- 統計圖表 -->
+    <div class="chart-container">
+        <BarChart :chartData="chartData_LHS" />
+        <LineChart :chartData="chartData_RHS" />
     </div>
+</el-card>
+<!--下方的表格-->
+<div :class="table_part">
+    <el-table ref="singleTableRef" :data="tableData" highlight-current-row style="width: 100%"
+        @current-change="handleCurrentChange">
+        <el-table-column type="index" width="50" />
+        <el-table-column property="cus_id" label="ID" />
+        <el-table-column property="name" label="姓名" />
+        <el-table-column property="mail" label="email" />
+        <el-table-column property="date" label="最近購買日期" />
+        <el-table-column sortable property="clv" label="終身價值" />
+    </el-table>
+    <div class="button-container">
+        <el-button @click="clear()">Clear selection</el-button>
+    </div>
+</div> 
 </template>
-    
-    
+
 <script setup>
 import { ref } from "vue"
 import { ElTable, ElCard } from 'element-plus'
-//   import pieChart from '@/components/LineChart.vue'
+import BarChart from '@/components/BarChartWithLine.vue'
+import LineChart from '@/components/LineChartForCus.vue'
 
 
-const chartData = ref({
+const chartData_LHS = ref({
+    xAxisData: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+    yAxisRev: [150, 230, 224, 218, 328, 400, 468],
+    yAxisGrowthRate: [10, 14, 13, 15, 9, 8, 7]
+})
 
+const chartData_RHS = ref({
+    xAxisData: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+    yAxisInterval: [20, 16, 17, 14, 13, 9, 8],
 })
 
 // 表格
-const currentRow = ref();
-const singleTableRef = ref();
+const currentRow = ref()
+const singleTableRef = ref()
 
 const table_part = ref('table_part')
 
 
 const tableData = [
     {
-        cus_id: '291029',
-        name: '100',
-        mail: '291022, 291021',
+        cus_id: '10000001',
+        name: 'AAA',
+        mail: 'a@gmail.com',
         date: '2023-11-02',
-        clv: 98356
+        clv: 9835
     },
     {
-        cus_id: '291029',
-        name: '100',
-        mail: '291022, 291021',
-        date: '2023-11-02',
-        clv: 98356
+        cus_id: '10000002',
+        name: 'BBB',
+        mail: 'b@gmail.com',
+        date: '2023-11-01',
+        clv: 356
     },
     {
-        cus_id: '291029',
-        name: '100',
-        mail: '291022, 291021',
-        date: '2023-11-02',
-        clv: 98356
-    },
-    {
-        cus_id: '291029',
-        name: '100',
-        mail: '291022, 291021',
-        date: '2023-11-02',
-        clv: 98356
-    },
-    {
-        cus_id: '291029',
-        name: '100',
-        mail: '291022, 291021',
-        date: '2023-11-02',
-        clv: 98356
-    },
-    {
-        cus_id: '291029',
-        name: '100',
-        mail: '291022, 291021',
-        date: '2023-11-02',
-        clv: 98356
-    },
-    {
-        cus_id: '291029',
-        name: '100',
-        mail: '291022, 291021',
-        date: '2023-11-02',
-        clv: 98356
-    },
-    {
-        cus_id: '291029',
-        name: '100',
-        mail: '291022, 291021',
-        date: '2023-11-02',
-        clv: 98356
-    },
-    {
-        cus_id: '291029',
-        name: '100',
-        mail: '291022, 291021',
-        date: '2023-11-02',
+        cus_id: '10000003',
+        name: 'CCC',
+        mail: 'c@gmail.com',
+        date: '2023-11-20',
         clv: 98356
     }
 ];
 
+// 清除選取的row
 const clear = () => {
     currentRow.value = null
     table_part.value = 'table_part'
@@ -143,15 +110,8 @@ const handleCurrentChange = (val) => {
 }
 
 .card-header {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: left;
-    padding: 0px 4px;
-}
-
-.text {
-    font-size: 14px;
+    padding: 0;
+    margin: 0;
 }
 
 .table_part {
@@ -192,4 +152,13 @@ const handleCurrentChange = (val) => {
     display: flex;
     justify-content: center;
     padding: 0.5% 2%;
-}</style>
+}
+
+.chart-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* 兩列，每列平均分配空間 */
+    gap: 16px;
+    /* 可以根據需要調整列之間的間距 */
+}
+</style>

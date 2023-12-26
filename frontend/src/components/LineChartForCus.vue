@@ -10,7 +10,6 @@ import {
     TooltipComponent,
     GridComponent,
     VisualMapComponent,
-    MarkAreaComponent,
     LegendComponent
 } from 'echarts/components';
 import { LineChart } from 'echarts/charts';
@@ -20,8 +19,7 @@ import { CanvasRenderer } from 'echarts/renderers';
 const props = defineProps({
   chartData: {
     xAxisData: [],
-    yAxisSales: [],
-    yAxisForcast: []
+    yAxisInterval: []
   }
 })
 
@@ -32,7 +30,6 @@ echarts.use([
     TooltipComponent,
     GridComponent,
     VisualMapComponent,
-    MarkAreaComponent,
     LegendComponent,
     LineChart,
     CanvasRenderer,
@@ -47,6 +44,14 @@ onMounted(() => {
     if (chartRef.value) {
         const myChart = echarts.init(chartRef.value);
         const option = {
+            title: {
+                text: "過去半年平均購買間隔時間",
+                left: "center",
+                // top: "center",
+                textStyle: {
+                    fontSize: 14
+                }
+            },
             tooltip: {
                 trigger: 'axis',
                 axisPointer: {
@@ -65,30 +70,31 @@ onMounted(() => {
             },
             yAxis: {
                 type: 'value',
+                name: '平均購買間隔',
                 axisPointer: {
                     snap: true
                 }
             },
-            legend: {  // 新增的 legend 配置
-                data: ['Sales', 'Forcast'],
+            legend: { 
+                data: ['平均購買間隔'],
+                top: 25 // 調整 legend 的位置
             },
             series: [
                 {
-                    name: 'Forcast',
-                    data: props.chartData.yAxisForcast,
+                    name: '平均購買間隔',
+                    data: props.chartData.yAxisInterval,
                     type: 'line',
-                    color: 'rgba(255, 165, 0, 1)'
-                },
-                {
-                    name: 'Sales',
-                    data: props.chartData.yAxisSales,
-                    type: 'line',
-                    color: 'rgba(0, 128, 255, 1)'
+                    color: 'rgba(255, 165, 0, 1)',
+                    tooltip: {
+                        valueFormatter: function (value) {
+                            return value + ' days'; //視數據修改
+                        }
+                    },
                 }
             ],
             grid: {
                 left: 50,
-                top: 10,
+                top: 75,
                 right: 50,
                 bottom: 50
             }
@@ -101,7 +107,7 @@ onMounted(() => {
 <style>
 /* CSS 样式 */
 .chart-container {
-    width: calc(100%-18%);
+    width: calc((100%-18%)/2);
     height: 250px;
 }
 </style>
