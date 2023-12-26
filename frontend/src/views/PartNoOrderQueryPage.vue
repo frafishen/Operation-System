@@ -40,60 +40,6 @@
         </div>
     </el-main>
 </template>
-  
-
-<!-- <script setup>
-import { ref } from "vue"
-import { ElTable, ElCard } from 'element-plus'
-import { Check } from '@element-plus/icons-vue'
-
-const order_data = ref({
-    id: "103301",
-    lead_time: "2023-12-02"
-})
-
-const step_data = ref([
-    {
-        process: "建模",
-        percentage: 100
-    },
-    {
-        process: "製造",
-        percentage: 70
-    },
-    {
-        process: "運送",
-        percentage: 0
-    }
-])
-
-// 表格
-const currentRow = ref();
-const singleTableRef = ref();
-
-const tableData = [
-    {
-        order_number: '10384',
-        part_no: '291029',
-        machine_type: 'D-005',
-        order_date: '2023-12-22',
-        lead_time: '2024-1-3'
-    }
-];
-
-const modifyProgress = () => {
-    // 改 step_data 數據
-    // eg.
-    step_data.value[1].percentage = 100
-}
-
-const handleCurrentChange = (val) => {
-    currentRow.value = val
-
-    modifyProgress()
-};
-
-</script> -->
 
 <script>
 import { ElTable, ElCard } from 'element-plus';
