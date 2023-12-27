@@ -127,7 +127,9 @@ def get_inventory():
     product_query = '''SELECT p.product_id, p.product_name, p.quantity, rp.required_pid AS required_product_id
                        FROM product p
                        INNER JOIN required_product rp ON p.product_id = rp.produced_pid;'''
+    
     material_query = 'SELECT material_id, material_name, quantity FROM material'
+
     with conn.cursor(cursor_factory=psycopg2.extras.DictCursor) as cursor:
         cursor.execute(product_query)
         product_data = cursor.fetchall()
@@ -195,16 +197,11 @@ def get_certain_type_product_orders(product_type):
                     m.machine_id, 
                     co.created_at AS order_created_at, 
                     co.delivered_at AS order_delivered_at
-                FROM 
-                    client_order co
-                INNER JOIN 
-                    order_contain_product ocp ON co.order_id = ocp.order_id
-                INNER JOIN 
-                    product p ON ocp.product_id = p.product_id
-                INNER JOIN 
-                    model m ON p.model_id = m.model_id
-                WHERE 
-                    p.product_type = '{product_type}';'''
+                FROM client_order co
+                INNER JOIN order_contain_product ocp ON co.order_id = ocp.order_id
+                INNER JOIN product p ON ocp.product_id = p.product_id
+                INNER JOIN model m ON p.model_id = m.model_id
+                WHERE p.product_type = '{product_type}';'''
     
     with conn.cursor(cursor_factory=psycopg2.extras.DictCursor) as cursor:
         cursor.execute(query)
@@ -238,12 +235,9 @@ def get_material_orders():
                     mo.created_at, 
                     mo.delivered_at, 
                     mo.progress
-               FROM 
-                    material_order mo
-               JOIN 
-                    order_contain_material ocm ON mo.material_order_id = ocm.material_order_id
-               JOIN 
-                    material m ON ocm.material_id = m.material_id;'''
+               FROM material_order mo
+               JOIN order_contain_material ocm ON mo.material_order_id = ocm.material_order_id
+               JOIN material m ON ocm.material_id = m.material_id;'''
     
     with conn.cursor(cursor_factory=psycopg2.extras.DictCursor) as cursor:
         cursor.execute(query)
