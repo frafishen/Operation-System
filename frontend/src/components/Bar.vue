@@ -3,13 +3,13 @@
         <!-- 側欄 -->
         <el-aside>
         <el-scrollbar>
-            <el-menu router :default-openeds="['1', '2']"> <!-- 預設開啟 -->
+            <el-menu router :default-openeds="[]"> <!-- 預設開啟 -->
                 <el-sub-menu index="1">
                     <template #title>
                         <el-icon><Tools /></el-icon>作業管理
                     </template>
                     <el-menu-item-group title="生產管理">
-                        <el-menu-item index="1-1">生產訂單規劃</el-menu-item>
+                        <el-menu-item index="/ProductionOrderManPage">生產訂單規劃</el-menu-item>
                         <el-menu-item index="/InventoryManPage">庫存管理</el-menu-item>
                     </el-menu-item-group>
                     <el-menu-item-group title="資訊查詢">
@@ -60,7 +60,6 @@ import { Menu as IconMenu, Message, Setting } from '@element-plus/icons-vue'
 <style scoped>
 .layout-container-demo {
     display: flex;
-    z-index: 1;
 }
 .layout-container-demo .el-header {
   background-color: var(--el-color-primary-light-7);
