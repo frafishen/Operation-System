@@ -17,7 +17,7 @@
   <div class="table_part">
     <el-table ref="singleTableRef" :data="materialOrders" highlight-current-row style="width: 100%"
       @current-change="handleRowClick">
-      <el-table-column type="index" width="50" />
+      <!-- <el-table-column type="index" width="50" /> -->
       <el-table-column property="material_order_id" label="訂單編號" width="120" />
       <el-table-column property="material_name" label="原物料名稱" width="120" />
       <el-table-column property="quantity" label="訂單總額" />

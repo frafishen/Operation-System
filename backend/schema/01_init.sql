@@ -22,6 +22,7 @@ CREATE TABLE client_order (
 
 CREATE TABLE machine (
     machine_id SERIAL PRIMARY KEY,
+    machine_name VARCHAR(255),
     status VARCHAR(255),
     created_at TIMESTAMP
 );
@@ -35,7 +36,8 @@ CREATE TABLE model (
 );
 
 CREATE TABLE supplier (
-    supplier_id SERIAL PRIMARY KEY
+    supplier_id SERIAL PRIMARY KEY,
+    supplier_name VARCHAR(255)
 );
 
 CREATE TABLE material (
@@ -97,7 +99,7 @@ CREATE TABLE product_inventory_consumption (
 	product_id INTEGER REFERENCES product(product_id),
 	consumed_date DATE,
 	consumed_quantity INTEGER,
-    is_forcast BOOLEAN
+    is_forecast BOOLEAN
 );
 
 CREATE TABLE material_inventory_consumption (
@@ -105,11 +107,11 @@ CREATE TABLE material_inventory_consumption (
 	material_id INTEGER REFERENCES material(material_id),
 	consumed_date DATE,
 	consumed_quantity INTEGER,
-    is_forcast BOOLEAN
+    is_forecast BOOLEAN
 );
 
 CREATE TABLE client_revenue (
-    sales_id SERIAL PRIMARY KEY,
+    revenue_id SERIAL PRIMARY KEY,
     client_id INTEGER REFERENCES client(client_id),
 	revenue JSON
 );
