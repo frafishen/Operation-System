@@ -99,7 +99,7 @@ CREATE TABLE product_inventory_consumption (
 	product_id INTEGER REFERENCES product(product_id),
 	consumed_date DATE,
 	consumed_quantity INTEGER,
-    is_forcast BOOLEAN
+    is_forecast BOOLEAN
 );
 
 CREATE TABLE material_inventory_consumption (
