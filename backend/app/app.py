@@ -120,7 +120,6 @@ def get_average_purchase_interval(id):
     return jsonify(result)
 
 
-
 # inventory
 @app.route('/inventory', methods=['GET'])
 def get_inventory():
@@ -170,7 +169,7 @@ def get_product_orders():
     query = '''SELECT co.order_id, 
                     ocp.product_id, 
                     p.product_name, 
-                    m.machine_id, 
+                    m.machine_name, 
                     co.created_at AS order_created_at, 
                     co.delivered_at AS order_delivered_at
                 FROM client_order co

@@ -22,6 +22,7 @@ CREATE TABLE client_order (
 
 CREATE TABLE machine (
     machine_id SERIAL PRIMARY KEY,
+    machine_name VARCHAR(255),
     status VARCHAR(255),
     created_at TIMESTAMP
 );
