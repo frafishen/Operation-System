@@ -22,55 +22,6 @@
       </el-table>
     </div>
   </template>
-    
-    
-  <!-- <script setup>
-  import { ref } from "vue"
-  import { ElTable, ElCard } from 'element-plus'
-  import LineChart from '@/components/LineChart.vue'
-  import { fetchInventory } from '@/api/InventoryManAPI';
-
-  
-  const inv_data = ref({
-    // 要根據選種不同row改變
-    product_id: ' ',
-    quantity: ' '
-  })
-
-  const chartData = ref({
-    xAxisData: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-    yAxisSales: [150, 230, 224, 218],
-    yAxisForcast: [150, 230, 224, 218, 135, 147, 260]
-  })
-  
-  // 表格
-  const currentRow = inv_data;
-  const singleTableRef = ref();
-  
-  const tableData = [
-    {
-      product_id: '291029',
-      quantity: '100',
-      required_product_id: '291022, 291021',
-    }
-  ];
-  
-  const judgeActiveStage = () => {
-
-  }
-  
-  const handleCurrentChange = (val) => {
-    currentRow.value = val;
-    console.log(val)
-    // 接stage data(上方有寫好的格式)
-  
-  
-    // 判斷 active 到哪
-    judgeActiveStage()
-
-  };
-  
-  </script> -->
 
   <script setup>
   import { ref, onMounted } from "vue";
