@@ -631,6 +631,8 @@ INSERT INTO product (product_name, model_id, created_at, product_type, price, qu
 
 -- 100
 INSERT INTO required_product (produced_pid, required_pid, quantity) VALUES (57, 43, 6),(38, 83, 10),(8, 1, 2),(74, 67, 8),(46, 8, 6),(61, 4, 9),(75, 45, 3),(59, 21, 2),(67, 82, 5),(37, 35, 1),(35, 75, 8),(19, 58, 7),(76, 73, 2),(64, 79, 6),(25, 69, 1),(89, 84, 10),(36, 1, 8),(98, 73, 10),(40, 45, 9),(42, 55, 6),(99, 48, 3),(68, 39, 5),(65, 35, 3),(6, 85, 6),(33, 78, 7),(41, 62, 3),(95, 85, 10),(4, 83, 2),(94, 83, 2),(70, 95, 7),(10, 77, 6),(92, 22, 4),(29, 63, 5),(92, 3, 5),(56, 98, 1),(58, 57, 9),(92, 55, 7),(43, 53, 6),(7, 70, 6),(21, 73, 6),(34, 20, 9),(5, 15, 2),(80, 19, 9),(38, 37, 4),(39, 78, 1),(28, 71, 8),(19, 74, 10),(73, 70, 5),(16, 90, 3),(90, 38, 5),(59, 72, 1),(93, 34, 4),(7, 81, 10),(42, 97, 8),(19, 24, 4),(26, 48, 3),(81, 49, 6),(23, 26, 1),(75, 32, 9),(24, 7, 10),(63, 47, 5),(12, 25, 8),(91, 39, 2),(58, 91, 6),(50, 51, 5),(13, 49, 1),(20, 43, 9),(88, 38, 2),(52, 60, 8),(50, 14, 4),(100, 35, 9),(61, 27, 5),(42, 32, 2),(80, 2, 2),(72, 97, 9),(4, 73, 6),(7, 52, 10),(66, 95, 7),(83, 8, 4),(31, 36, 4),(21, 78, 6),(13, 47, 10),(85, 68, 2),(25, 52, 5),(79, 85, 4),(41, 15, 7),(59, 69, 4),(9, 10, 7),(55, 16, 5),(85, 64, 6),(11, 88, 2),(45, 1, 10),(21, 15, 7),(98, 41, 8),(86, 39, 2),(79, 38, 10),(66, 83, 10),(9, 49, 10),(33, 42, 3),(7, 25, 9);
+
+
 -- 100
 INSERT INTO required_material (product_id, material_id, quantity) VALUES (57, 43, 6),(38, 83, 10),(8, 1, 2),(74, 67, 8),(46, 8, 6),(61, 4, 9),(75, 45, 3),(59, 21, 2),(67, 82, 5),(37, 35, 1),(35, 75, 8),(19, 58, 7),(76, 73, 2),(64, 79, 6),(25, 69, 1),(89, 84, 10),(36, 1, 8),(98, 73, 10),(40, 45, 9),(42, 55, 6),(99, 48, 3),(68, 39, 5),(65, 35, 3),(6, 85, 6),(33, 78, 7),(41, 62, 3),(95, 85, 10),(4, 83, 2),(94, 83, 2),(70, 95, 7),(10, 77, 6),(92, 22, 4),(29, 63, 5),(92, 3, 5),(56, 98, 1),(58, 57, 9),(92, 55, 7),(43, 53, 6),(7, 70, 6),(21, 73, 6),(34, 20, 9),(5, 15, 2),(80, 19, 9),(38, 37, 4),(39, 78, 1),(28, 71, 8),(19, 74, 10),(73, 70, 5),(16, 90, 3),(90, 38, 5),(59, 72, 1),(93, 34, 4),(7, 81, 10),(42, 97, 8),(19, 24, 4),(26, 48, 3),(81, 49, 6),(23, 26, 1),(75, 32, 9),(24, 7, 10),(63, 47, 5),(12, 25, 8),(91, 39, 2),(58, 91, 6),(50, 51, 5),(13, 49, 1),(20, 43, 9),(88, 38, 2),(52, 60, 8),(50, 14, 4),(100, 35, 9),(61, 27, 5),(42, 32, 2),(80, 2, 2),(72, 97, 9),(4, 73, 6),(7, 52, 10),(66, 95, 7),(83, 8, 4),(31, 36, 4),(21, 78, 6),(13, 47, 10),(85, 68, 2),(25, 52, 5),(79, 85, 4),(41, 15, 7),(59, 69, 4),(9, 10, 7),(55, 16, 5),(85, 64, 6),(11, 88, 2),(45, 1, 10),(21, 15, 7),(98, 41, 8),(86, 39, 2),(79, 38, 10),(66, 83, 10),(9, 49, 10),(33, 42, 3),(7, 25, 9);
 
@@ -638,133 +640,122 @@ INSERT INTO required_material (product_id, material_id, quantity) VALUES (57, 43
 -- 100
 INSERT INTO order_contain_product (order_id, product_id, quantity) VALUES (1, 32, 5), (2, 33, 5), (3, 34, 8), (4, 35, 9), (5, 36, 8), (6, 37, 8), (7, 38, 6), (8, 39, 7), (9, 40, 6), (10, 41, 5), (11, 42, 6), (12, 43, 5), (13, 44, 6), (14, 45, 10), (15, 46, 10), (16, 47, 2), (17, 48, 4), (18, 49, 5), (19, 50, 6), (20, 51, 4), (21, 52, 10), (22, 53, 5), (23, 54, 6), (24, 55, 1), (25, 56, 2), (26, 57, 9), (27, 58, 10), (28, 59, 1), (29, 60, 6), (30, 61, 2), (31, 62, 1), (32, 63, 4), (33, 64, 2), (34, 65, 5), (35, 66, 4), (36, 67, 3), (37, 68, 8), (38, 69, 10), (39, 70, 4), (40, 71, 3), (41, 72, 4), (42, 73, 2), (43, 74, 8), (44, 75, 7), (45, 76, 5), (46, 77, 2), (47, 78, 9), (48, 79, 10), (49, 80, 5), (50, 81, 9), (51, 82, 5), (52, 83, 5), (53, 84, 8), (54, 85, 8), (55, 86, 7), (56, 87, 2), (57, 88, 6), (58, 89, 7), (59, 90, 2), (60, 91, 10), (61, 92, 7), (62, 93, 6), (63, 94, 6), (64, 95, 3), (65, 96, 10), (66, 97, 3), (67, 98, 4), (68, 99, 3), (69, 100, 8), (70, 1, 3), (71, 2, 2), (72, 3, 3), (73, 4, 7), (74, 5, 5), (75, 6, 6), (76, 7, 9), (77, 8, 6), (78, 9, 4), (79, 10, 8), (80, 11, 1), (81, 12, 5), (82, 13, 6), (83, 14, 1), (84, 15, 3), (85, 16, 4), (86, 17, 7), (87, 18, 7), (88, 19, 5), (89, 20, 4), (90, 21, 6), (91, 22, 2), (92, 23, 1), (93, 24, 5), (94, 25, 2), (95, 26, 10), (96, 27, 3), (97, 28, 1), (98, 29, 2), (99, 30, 10), (100, 31, 3);
 
--- 3 material orders
-INSERT INTO material_order (supplier_id, price, created_at, progress) VALUES
-(1, 100, CURRENT_TIMESTAMP, '{"stage 1": "recieved 0 kg", "stage 2": "recieved 10 kg", "stage 3": "recieved 5 kg, order completed"}'),
-(2, 100, CURRENT_TIMESTAMP, '{"stage 1": "recieved 0 kg", "stage 2": "recieved 12 kg", "stage 3": "recieved 3 kg", "stage 4": "recieved 5 kg, order completed"}'),
-(1, 200, CURRENT_TIMESTAMP, '{"stage 1": "recieved 0 kg", "stage 2": "recieved 5 kg", "stage 3": "recieved 5 kg", "stage 4": "recieved 5 kg", "stage 5": "recieved 5 kg, order completed"}');
+
+-- 100 material orders
+INSERT INTO material_order (supplier_id, price, created_at, delivered_at, progress) VALUES (15, 610, '2023-02-22 00:00:00', '2023-03-14 00:00:00', '{"stage 1": "recieved 8 kg", "stage 2": "recieved 11 kg", "stage 3": "recieved 3 kg", "stage 4": "recieved 13 kg", "stage 5": "recieved 12 kg, order completed"}'), (8, 4770, '2023-10-12 00:00:00', '2023-11-10 00:00:00', '{"stage 1": "recieved 12 kg", "stage 2": "recieved 14 kg", "stage 3": "recieved 10 kg", "stage 4": "recieved 10 kg, order completed"}'), (89, 4350, '2023-01-17 00:00:00', '2023-02-03 00:00:00', '{"stage 1": "recieved 14 kg", "stage 2": "recieved 6 kg", "stage 3": "recieved 2 kg, order completed"}'), (68, 3280, '2023-01-21 00:00:00', '2023-02-15 00:00:00', '{"stage 1": "recieved 3 kg, order completed"}'), (61, 880, '2023-03-16 00:00:00', '2023-04-01 00:00:00', '{"stage 1": "recieved 6 kg", "stage 2": "recieved 10 kg", "stage 3": "recieved 7 kg, order completed"}'), (48, 2060, '2023-09-25 00:00:00', '2023-10-13 00:00:00', '{"stage 1": "recieved 7 kg, order completed"}'), (24, 2550, '2023-04-09 00:00:00', '2023-05-02 00:00:00', '{"stage 1": "recieved 12 kg", "stage 2": "recieved 6 kg, order completed"}'), (7, 3870, '2023-08-30 00:00:00', '2023-09-08 00:00:00', '{"stage 1": "recieved 12 kg", "stage 2": "recieved 1 kg, order completed"}'), (53, 970, '2023-07-27 00:00:00', '2023-08-18 00:00:00', '{"stage 1": "recieved 15 kg", "stage 2": "recieved 10 kg", "stage 3": "recieved 11 kg, order completed"}'), (51, 3240, '2023-03-30 00:00:00', '2023-04-15 00:00:00', '{"stage 1": "recieved 1 kg", "stage 2": "recieved 4 kg", "stage 3": "recieved 6 kg", "stage 4": "recieved 4 kg", "stage 5": "recieved 4 kg, order completed"}'), (10, 2810, '2023-02-02 00:00:00', '2023-03-04 00:00:00', '{"stage 1": "recieved 3 kg", "stage 2": "recieved 11 kg", "stage 3": "recieved 15 kg, order completed"}'), (70, 4530, '2023-04-22 00:00:00', '2023-05-10 00:00:00', '{"stage 1": "recieved 9 kg", "stage 2": "recieved 13 kg", "stage 3": "recieved 10 kg", "stage 4": "recieved 15 kg, order completed"}'), (84, 3530, '2023-02-02 00:00:00', '2023-03-04 00:00:00', '{"stage 1": "recieved 7 kg", "stage 2": "recieved 2 kg", "stage 3": "recieved 12 kg, order completed"}'), (83, 2490, '2023-03-05 00:00:00', '2023-03-18 00:00:00', '{"stage 1": "recieved 3 kg", "stage 2": "recieved 3 kg", "stage 3": "recieved 9 kg, order completed"}'), (86, 2470, '2023-05-13 00:00:00', '2023-05-27 00:00:00', '{"stage 1": "recieved 14 kg", "stage 2": "recieved 6 kg", "stage 3": "recieved 15 kg, order completed"}'), (95, 3220, '2023-11-07 00:00:00', '2023-11-28 00:00:00', '{"stage 1": "recieved 1 kg", "stage 2": "recieved 11 kg", "stage 3": "recieved 9 kg", "stage 4": "recieved 2 kg", "stage 5": "recieved 10 kg, order completed"}'), (99, 2080, '2023-08-08 00:00:00', '2023-09-01 00:00:00', '{"stage 1": "recieved 6 kg", "stage 2": "recieved 10 kg", "stage 3": "recieved 3 kg", "stage 4": "recieved 7 kg", "stage 5": "recieved 1 kg, order completed"}'), (30, 4780, '2023-12-07 00:00:00', '2024-01-03 00:00:00', '{"stage 1": "recieved 1 kg", "stage 2": "recieved 4 kg, order completed"}'), (14, 4620, '2023-03-08 00:00:00', '2023-03-23 00:00:00', '{"stage 1": "recieved 5 kg", "stage 2": "recieved 12 kg", "stage 3": "recieved 11 kg", "stage 4": "recieved 13 kg, order completed"}'), (72, 3670, '2023-06-23 00:00:00', '2023-07-22 00:00:00', '{"stage 1": "recieved 2 kg", "stage 2": "recieved 4 kg", "stage 3": "recieved 14 kg", "stage 4": "recieved 15 kg", "stage 5": "recieved 9 kg, order completed"}'), (16, 4400, '2023-12-23 00:00:00', '2024-01-17 00:00:00', '{"stage 1": "recieved 9 kg", "stage 2": "recieved 11 kg", "stage 3": "recieved 3 kg", "stage 4": "recieved 7 kg, order completed"}'), (9, 1820, '2023-02-23 00:00:00', '2023-03-21 00:00:00', '{"stage 1": "recieved 15 kg", "stage 2": "recieved 5 kg", "stage 3": "recieved 6 kg", "stage 4": "recieved 10 kg", "stage 5": "recieved 9 kg, order completed"}'), (70, 1640, '2023-11-10 00:00:00', '2023-12-06 00:00:00', '{"stage 1": "recieved 11 kg", "stage 2": "recieved 7 kg", "stage 3": "recieved 5 kg, order completed"}'), (1, 2550, '2023-10-30 00:00:00', '2023-11-19 00:00:00', '{"stage 1": "recieved 2 kg", "stage 2": "recieved 15 kg", "stage 3": "recieved 4 kg, order completed"}'), (44, 2520, '2023-12-13 00:00:00', '2023-12-22 00:00:00', '{"stage 1": "recieved 8 kg", "stage 2": "recieved 12 kg, order completed"}'), (2, 3660, '2023-03-16 00:00:00', '2023-03-30 00:00:00', '{"stage 1": "recieved 10 kg", "stage 2": "recieved 7 kg", "stage 3": "recieved 3 kg", "stage 4": "recieved 14 kg", "stage 5": "recieved 11 kg, order completed"}'), (65, 3570, '2023-10-22 00:00:00', '2023-10-26 00:00:00', '{"stage 1": "recieved 7 kg", "stage 2": "recieved 3 kg", "stage 3": "recieved 12 kg", "stage 4": "recieved 9 kg", "stage 5": "recieved 13 kg, order completed"}'), (2, 4090, '2023-08-28 00:00:00', '2023-09-16 00:00:00', '{"stage 1": "recieved 2 kg", "stage 2": "recieved 13 kg", "stage 3": "recieved 8 kg, order completed"}'), (78, 3180, '2023-11-13 00:00:00', '2023-12-13 00:00:00', '{"stage 1": "recieved 13 kg", "stage 2": "recieved 13 kg", "stage 3": "recieved 7 kg, order completed"}'), (89, 1640, '2023-05-25 00:00:00', '2023-06-18 00:00:00', '{"stage 1": "recieved 12 kg", "stage 2": "recieved 11 kg", "stage 3": "recieved 12 kg", "stage 4": "recieved 14 kg", "stage 5": "recieved 1 kg, order completed"}'), (96, 700, '2023-07-24 00:00:00', '2023-08-22 00:00:00', '{"stage 1": "recieved 15 kg", "stage 2": "recieved 15 kg", "stage 3": "recieved 3 kg", "stage 4": "recieved 1 kg", "stage 5": "recieved 1 kg, order completed"}'), (83, 1500, '2023-10-07 00:00:00', '2023-10-14 00:00:00', '{"stage 1": "recieved 2 kg", "stage 2": "recieved 3 kg", "stage 3": "recieved 14 kg, order completed"}'), (95, 1350, '2023-03-27 00:00:00', '2023-04-09 00:00:00', '{"stage 1": "recieved 4 kg, order completed"}'), (82, 650, '2023-02-02 00:00:00', '2023-02-12 00:00:00', '{"stage 1": "recieved 15 kg", "stage 2": "recieved 1 kg", "stage 3": "recieved 10 kg", "stage 4": "recieved 13 kg, order completed"}'), (90, 2000, '2023-05-09 00:00:00', '2023-05-17 00:00:00', '{"stage 1": "recieved 1 kg", "stage 2": "recieved 13 kg", "stage 3": "recieved 7 kg", "stage 4": "recieved 10 kg", "stage 5": "recieved 9 kg, order completed"}'), (55, 4800, '2023-12-23 00:00:00', '2024-01-13 00:00:00', '{"stage 1": "recieved 13 kg", "stage 2": "recieved 8 kg, order completed"}'), (80, 1070, '2023-06-12 00:00:00', '2023-06-29 00:00:00', '{"stage 1": "recieved 2 kg", "stage 2": "recieved 12 kg", "stage 3": "recieved 9 kg", "stage 4": "recieved 15 kg, order completed"}'), (16, 3000, '2023-07-01 00:00:00', '2023-07-30 00:00:00', '{"stage 1": "recieved 15 kg", "stage 2": "recieved 12 kg", "stage 3": "recieved 4 kg", "stage 4": "recieved 9 kg", "stage 5": "recieved 11 kg, order completed"}'), (52, 2090, '2023-05-14 00:00:00', '2023-05-27 00:00:00', '{"stage 1": "recieved 10 kg", "stage 2": "recieved 3 kg", "stage 3": "recieved 11 kg", "stage 4": "recieved 13 kg", "stage 5": "recieved 12 kg, order completed"}'), (55, 4690, '2023-01-15 00:00:00', '2023-01-25 00:00:00', '{"stage 1": "recieved 12 kg", "stage 2": "recieved 7 kg, order completed"}'), (45, 1210, '2023-02-18 00:00:00', '2023-03-03 00:00:00', '{"stage 1": "recieved 15 kg", "stage 2": "recieved 4 kg, order completed"}'), (22, 3980, '2023-07-08 00:00:00', '2023-07-26 00:00:00', '{"stage 1": "recieved 8 kg", "stage 2": "recieved 9 kg, order completed"}'), (18, 1370, '2023-06-22 00:00:00', '2023-07-21 00:00:00', '{"stage 1": "recieved 2 kg", "stage 2": "recieved 8 kg", "stage 3": "recieved 11 kg", "stage 4": "recieved 2 kg", "stage 5": "recieved 5 kg, order completed"}'), (66, 3040, '2023-11-17 00:00:00', '2023-12-16 00:00:00', '{"stage 1": "recieved 10 kg", "stage 2": "recieved 5 kg, order completed"}'), (55, 4300, '2023-08-11 00:00:00', '2023-09-06 00:00:00', '{"stage 1": "recieved 3 kg", "stage 2": "recieved 7 kg, order completed"}'), (28, 1710, '2023-01-24 00:00:00', '2023-02-05 00:00:00', '{"stage 1": "recieved 3 kg, order completed"}'), (36, 1110, '2023-04-01 00:00:00', '2023-04-14 00:00:00', '{"stage 1": "recieved 3 kg, order completed"}'), (97, 2470, '2023-08-08 00:00:00', '2023-08-30 00:00:00', '{"stage 1": "recieved 15 kg", "stage 2": "recieved 6 kg", "stage 3": "recieved 13 kg", "stage 4": "recieved 8 kg", "stage 5": "recieved 5 kg, order completed"}'), (75, 1770, '2023-02-07 00:00:00', '2023-02-10 00:00:00', '{"stage 1": "recieved 2 kg", "stage 2": "recieved 5 kg", "stage 3": "recieved 5 kg", "stage 4": "recieved 9 kg", "stage 5": "recieved 5 kg, order completed"}'), (76, 3430, '2023-07-19 00:00:00', '2023-08-07 00:00:00', '{"stage 1": "recieved 8 kg, order completed"}'), (65, 3740, '2023-03-25 00:00:00', '2023-04-05 00:00:00', '{"stage 1": "recieved 3 kg, order completed"}'), (65, 1970, '2023-05-30 00:00:00', '2023-06-20 00:00:00', '{"stage 1": "recieved 14 kg", "stage 2": "recieved 3 kg", "stage 3": "recieved 8 kg", "stage 4": "recieved 11 kg, order completed"}'), (24, 1120, '2023-11-04 00:00:00', '2023-11-09 00:00:00', '{"stage 1": "recieved 2 kg", "stage 2": "recieved 1 kg", "stage 3": "recieved 6 kg", "stage 4": "recieved 13 kg, order completed"}'), (36, 4760, '2023-05-08 00:00:00', '2023-05-16 00:00:00', '{"stage 1": "recieved 13 kg", "stage 2": "recieved 1 kg", "stage 3": "recieved 9 kg, order completed"}'), (84, 1570, '2023-08-31 00:00:00', '2023-09-03 00:00:00', '{"stage 1": "recieved 13 kg", "stage 2": "recieved 8 kg", "stage 3": "recieved 11 kg", "stage 4": "recieved 12 kg, order completed"}'), (99, 3000, '2023-09-28 00:00:00', '2023-10-13 00:00:00', '{"stage 1": "recieved 6 kg, order completed"}'), (17, 3220, '2023-10-06 00:00:00', '2023-10-30 00:00:00', '{"stage 1": "recieved 10 kg, order completed"}'), (21, 3220, '2023-09-01 00:00:00', '2023-09-11 00:00:00', '{"stage 1": "recieved 5 kg, order completed"}'), (21, 1090, '2023-05-04 00:00:00', '2023-05-28 00:00:00', '{"stage 1": "recieved 15 kg", "stage 2": "recieved 12 kg, order completed"}'), (95, 2640, '2023-06-29 00:00:00', '2023-07-22 00:00:00', '{"stage 1": "recieved 3 kg", "stage 2": "recieved 6 kg", "stage 3": "recieved 11 kg", "stage 4": "recieved 13 kg", "stage 5": "recieved 7 kg, order completed"}'), (63, 4930, '2023-05-14 00:00:00', '2023-05-19 00:00:00', '{"stage 1": "recieved 15 kg", "stage 2": "recieved 15 kg, order completed"}'), (94, 2220, '2023-01-03 00:00:00', '2023-01-31 00:00:00', '{"stage 1": "recieved 3 kg", "stage 2": "recieved 6 kg, order completed"}'), (84, 1900, '2023-12-22 00:00:00', '2024-01-12 00:00:00', '{"stage 1": "recieved 1 kg, order completed"}'), (18, 3670, '2023-07-05 00:00:00', '2023-08-01 00:00:00', '{"stage 1": "recieved 9 kg", "stage 2": "recieved 11 kg, order completed"}'), (99, 4630, '2023-10-17 00:00:00', '2023-10-23 00:00:00', '{"stage 1": "recieved 15 kg", "stage 2": "recieved 11 kg, order completed"}'), (4, 4250, '2023-11-10 00:00:00', '2023-12-04 00:00:00', '{"stage 1": "recieved 11 kg", "stage 2": "recieved 7 kg", "stage 3": "recieved 10 kg", "stage 4": "recieved 10 kg, order completed"}'), (80, 1360, '2023-10-20 00:00:00', '2023-11-06 00:00:00', '{"stage 1": "recieved 12 kg", "stage 2": "recieved 7 kg", "stage 3": "recieved 6 kg", "stage 4": "recieved 11 kg, order completed"}'), (24, 1320, '2023-12-22 00:00:00', '2023-12-30 00:00:00', '{"stage 1": "recieved 7 kg, order completed"}'), (27, 4530, '2023-12-28 00:00:00', '2024-01-05 00:00:00', '{"stage 1": "recieved 14 kg", "stage 2": "recieved 8 kg", "stage 3": "recieved 3 kg", "stage 4": "recieved 10 kg, order completed"}'), (71, 1310, '2023-01-13 00:00:00', '2023-01-22 00:00:00', '{"stage 1": "recieved 5 kg", "stage 2": "recieved 7 kg, order completed"}'), (36, 3140, '2023-05-30 00:00:00', '2023-06-02 00:00:00', '{"stage 1": "recieved 6 kg", "stage 2": "recieved 9 kg, order completed"}'), (13, 4720, '2023-08-23 00:00:00', '2023-09-10 00:00:00', '{"stage 1": "recieved 8 kg", "stage 2": "recieved 6 kg, order completed"}'), (63, 2830, '2023-02-16 00:00:00', '2023-03-10 00:00:00', '{"stage 1": "recieved 2 kg", "stage 2": "recieved 4 kg", "stage 3": "recieved 1 kg", "stage 4": "recieved 2 kg", "stage 5": "recieved 2 kg, order completed"}'), (34, 3270, '2023-06-02 00:00:00', '2023-06-03 00:00:00', '{"stage 1": "recieved 6 kg", "stage 2": "recieved 11 kg, order completed"}'), (71, 4370, '2023-06-28 00:00:00', '2023-07-22 00:00:00', '{"stage 1": "recieved 13 kg", "stage 2": "recieved 6 kg", "stage 3": "recieved 11 kg, order completed"}'), (18, 570, '2023-12-12 00:00:00', '2024-01-03 00:00:00', '{"stage 1": "recieved 7 kg", "stage 2": "recieved 6 kg, order completed"}'), (61, 1210, '2023-05-07 00:00:00', '2023-06-04 00:00:00', '{"stage 1": "recieved 5 kg", "stage 2": "recieved 5 kg, order completed"}'), (45, 4740, '2023-02-13 00:00:00', '2023-02-17 00:00:00', '{"stage 1": "recieved 13 kg", "stage 2": "recieved 1 kg, order completed"}'), (42, 4980, '2023-01-22 00:00:00', '2023-02-13 00:00:00', '{"stage 1": "recieved 9 kg, order completed"}'), (26, 2290, '2023-07-11 00:00:00', '2023-07-18 00:00:00', '{"stage 1": "recieved 12 kg", "stage 2": "recieved 5 kg, order completed"}'), (92, 4400, '2023-02-17 00:00:00', '2023-02-28 00:00:00', '{"stage 1": "recieved 5 kg, order completed"}'), (96, 4090, '2023-11-05 00:00:00', '2023-11-17 00:00:00', '{"stage 1": "recieved 13 kg", "stage 2": "recieved 6 kg", "stage 3": "recieved 5 kg, order completed"}'), (68, 3990, '2023-09-25 00:00:00', '2023-10-03 00:00:00', '{"stage 1": "recieved 11 kg", "stage 2": "recieved 14 kg, order completed"}'), (92, 600, '2023-11-27 00:00:00', '2023-12-11 00:00:00', '{"stage 1": "recieved 8 kg, order completed"}'), (20, 590, '2023-07-10 00:00:00', '2023-07-30 00:00:00', '{"stage 1": "recieved 8 kg", "stage 2": "recieved 12 kg", "stage 3": "recieved 7 kg, order completed"}'), (28, 1620, '2023-03-06 00:00:00', '2023-03-27 00:00:00', '{"stage 1": "recieved 14 kg", "stage 2": "recieved 8 kg", "stage 3": "recieved 8 kg, order completed"}'), (35, 4920, '2023-11-26 00:00:00', '2023-12-18 00:00:00', '{"stage 1": "recieved 12 kg", "stage 2": "recieved 3 kg", "stage 3": "recieved 11 kg, order completed"}'), (8, 3460, '2023-04-06 00:00:00', '2023-04-25 00:00:00', '{"stage 1": "recieved 9 kg, order completed"}'), (6, 1610, '2023-05-31 00:00:00', '2023-06-16 00:00:00', '{"stage 1": "recieved 15 kg", "stage 2": "recieved 4 kg", "stage 3": "recieved 3 kg", "stage 4": "recieved 10 kg", "stage 5": "recieved 13 kg, order completed"}'), (17, 3880, '2023-06-18 00:00:00', '2023-06-24 00:00:00', '{"stage 1": "recieved 11 kg", "stage 2": "recieved 6 kg", "stage 3": "recieved 10 kg, order completed"}'), (53, 5000, '2023-08-23 00:00:00', '2023-09-13 00:00:00', '{"stage 1": "recieved 9 kg", "stage 2": "recieved 3 kg, order completed"}'), (71, 960, '2023-04-15 00:00:00', '2023-04-19 00:00:00', '{"stage 1": "recieved 2 kg", "stage 2": "recieved 4 kg", "stage 3": "recieved 13 kg, order completed"}'), (98, 3560, '2023-12-23 00:00:00', '2024-01-10 00:00:00', '{"stage 1": "recieved 4 kg", "stage 2": "recieved 11 kg", "stage 3": "recieved 1 kg", "stage 4": "recieved 13 kg", "stage 5": "recieved 6 kg, order completed"}'), (9, 3920, '2023-07-14 00:00:00', '2023-07-21 00:00:00', '{"stage 1": "recieved 4 kg", "stage 2": "recieved 5 kg", "stage 3": "recieved 4 kg", "stage 4": "recieved 15 kg", "stage 5": "recieved 12 kg, order completed"}'), (54, 2110, '2023-02-14 00:00:00', '2023-02-24 00:00:00', '{"stage 1": "recieved 8 kg", "stage 2": "recieved 5 kg", "stage 3": "recieved 7 kg, order completed"}'), (47, 4320, '2023-02-26 00:00:00', '2023-02-28 00:00:00', '{"stage 1": "recieved 2 kg", "stage 2": "recieved 2 kg", "stage 3": "recieved 7 kg", "stage 4": "recieved 10 kg, order completed"}'), (31, 2760, '2023-05-02 00:00:00', '2023-05-19 00:00:00', '{"stage 1": "recieved 1 kg", "stage 2": "recieved 8 kg, order completed"}'), (62, 2210, '2023-02-20 00:00:00', '2023-03-20 00:00:00', '{"stage 1": "recieved 5 kg", "stage 2": "recieved 9 kg, order completed"}'), (72, 4770, '2023-08-02 00:00:00', '2023-08-09 00:00:00', '{"stage 1": "recieved 7 kg", "stage 2": "recieved 6 kg", "stage 3": "recieved 8 kg", "stage 4": "recieved 7 kg", "stage 5": "recieved 7 kg, order completed"}'), (90, 2700, '2023-05-25 00:00:00', '2023-06-03 00:00:00', '{"stage 1": "recieved 8 kg", "stage 2": "recieved 5 kg", "stage 3": "recieved 3 kg, order completed"}');
+
 
 -- 100
--- INSERT INTO order_contain_material (material_order_id, material_id, quantity) VALUES (1, 32, 5), (2, 33, 5), (3, 34, 8), (4, 35, 9), (5, 36, 8), (6, 37, 8), (7, 38, 6), (8, 39, 7), (9, 40, 6), (10, 41, 5), (11, 42, 6), (12, 43, 5), (13, 44, 6), (14, 45, 10), (15, 46, 10), (16, 47, 2), (17, 48, 4), (18, 49, 5), (19, 50, 6), (20, 51, 4), (21, 52, 10), (22, 53, 5), (23, 54, 6), (24, 55, 1), (25, 56, 2), (26, 57, 9), (27, 58, 10), (28, 59, 1), (29, 60, 6), (30, 61, 2), (31, 62, 1), (32, 63, 4), (33, 64, 2), (34, 65, 5), (35, 66, 4), (36, 67, 3), (37, 68, 8), (38, 69, 10), (39, 70, 4), (40, 71, 3), (41, 72, 4), (42, 73, 2), (43, 74, 8), (44, 75, 7), (45, 76, 5), (46, 77, 2), (47, 78, 9), (48, 79, 10), (49, 80, 5), (50, 81, 9), (51, 82, 5), (52, 83, 5), (53, 84, 8), (54, 85, 8), (55, 86, 7), (56, 87, 2), (57, 88, 6), (58, 89, 7), (59, 90, 2), (60, 91, 10), (61, 92, 7), (62, 93, 6), (63, 94, 6), (64, 95, 3), (65, 96, 10), (66, 97, 3), (67, 98, 4), (68, 99, 3), (69, 100, 8), (70, 1, 3), (71, 2, 2), (72, 3, 3), (73, 4, 7), (74, 5, 5), (75, 6, 6), (76, 7, 9), (77, 8, 6), (78, 9, 4), (79, 10, 8), (80, 11, 1), (81, 12, 5), (82, 13, 6), (83, 14, 1), (84, 15, 3), (85, 16, 4), (86, 17, 7), (87, 18, 7), (88, 19, 5), (89, 20, 4), (90, 21, 6), (91, 22, 2), (92, 23, 1), (93, 24, 5), (94, 25, 2), (95, 26, 10), (96, 27, 3), (97, 28, 1), (98, 29, 2), (99, 30, 10), (100, 31, 3);
+INSERT INTO order_contain_material (material_order_id, material_id, quantity) VALUES (1, 32, 5), (2, 33, 5), (3, 34, 8), (4, 35, 9), (5, 36, 8), (6, 37, 8), (7, 38, 6), (8, 39, 7), (9, 40, 6), (10, 41, 5), (11, 42, 6), (12, 43, 5), (13, 44, 6), (14, 45, 10), (15, 46, 10), (16, 47, 2), (17, 48, 4), (18, 49, 5), (19, 50, 6), (20, 51, 4), (21, 52, 10), (22, 53, 5), (23, 54, 6), (24, 55, 1), (25, 56, 2), (26, 57, 9), (27, 58, 10), (28, 59, 1), (29, 60, 6), (30, 61, 2), (31, 62, 1), (32, 63, 4), (33, 64, 2), (34, 65, 5), (35, 66, 4), (36, 67, 3), (37, 68, 8), (38, 69, 10), (39, 70, 4), (40, 71, 3), (41, 72, 4), (42, 73, 2), (43, 74, 8), (44, 75, 7), (45, 76, 5), (46, 77, 2), (47, 78, 9), (48, 79, 10), (49, 80, 5), (50, 81, 9), (51, 82, 5), (52, 83, 5), (53, 84, 8), (54, 85, 8), (55, 86, 7), (56, 87, 2), (57, 88, 6), (58, 89, 7), (59, 90, 2), (60, 91, 10), (61, 92, 7), (62, 93, 6), (63, 94, 6), (64, 95, 3), (65, 96, 10), (66, 97, 3), (67, 98, 4), (68, 99, 3), (69, 100, 8), (70, 1, 3), (71, 2, 2), (72, 3, 3), (73, 4, 7), (74, 5, 5), (75, 6, 6), (76, 7, 9), (77, 8, 6), (78, 9, 4), (79, 10, 8), (80, 11, 1), (81, 12, 5), (82, 13, 6), (83, 14, 1), (84, 15, 3), (85, 16, 4), (86, 17, 7), (87, 18, 7), (88, 19, 5), (89, 20, 4), (90, 21, 6), (91, 22, 2), (92, 23, 1), (93, 24, 5), (94, 25, 2), (95, 26, 10), (96, 27, 3), (97, 28, 1), (98, 29, 2), (99, 30, 10), (100, 31, 3);
 
 
-INSERT INTO client_revenue (client_id, revenue) VALUES
-(1, '{  
-        "Jan-2023": 87.01,
-        "Feb-2023": 91.60,
-        "Mar-2023": 99.23,
-        "Apr-2023": 102.27,
-        "May-2023": 104.73,
-        "Jun-2023": 107.09,
-        "Jul-2023": 110.46,
-        "Aug-2023": 117.63,
-        "Sep-2023": 117.52,
-        "Oct-2023": 115.18,
-        "Nov-2023": 100.39,
-        "Dec-2023": 94.56
-    }');
+-- INSERT INTO client_revenue (client_id, revenue) VALUES
+-- (1, '{  
+--         "Jan-2023": 87.01,
+--         "Feb-2023": 91.60,
+--         "Mar-2023": 99.23,
+--         "Apr-2023": 102.27,
+--         "May-2023": 104.73,
+--         "Jun-2023": 107.09,
+--         "Jul-2023": 110.46,
+--         "Aug-2023": 117.63,
+--         "Sep-2023": 117.52,
+--         "Oct-2023": 115.18,
+--         "Nov-2023": 100.39,
+--         "Dec-2023": 94.56
+--     }');
 
-INSERT INTO average_purchase_interval (client_id, avg_purchase_interval) VALUES
-(1, '{
-        "Jan-2023": 10,
-        "Feb-2023": 12,
-        "Mar-2023": 13,
-        "Apr-2023": 12,
-        "May-2023": 11,
-        "Jun-2023": 11,
-        "Jul-2023": 9,
-        "Aug-2023": 8,
-        "Sep-2023": 8,
-        "Oct-2023": 7,
-        "Nov-2023": 9,
-        "Dec-2023": 10
-    }');
-
-
-INSERT INTO product_inventory_consumption (product_id, consumed_date, consumed_quantity, is_forcast) VALUES
-(1, '2021-01-01', 70.16, false),
-(1, '2021-02-01', 73.32, false),
-(1, '2021-03-01', 80.91, false),
-(1, '2021-04-01', 86.04, false),
-(1, '2021-05-01', 87.93, false),
-(1, '2021-06-01', 90.24, false),
-(1, '2021-07-01', 95.16, false),
-(1, '2021-08-01', 101.10, false),
-(1, '2021-09-01', 99.57, false),
-(1, '2021-10-01', 97.81, false),
-(1, '2021-11-01', 83.84, false),
-(1, '2021-12-01', 77.96, false),
-(1, '2022-01-01', 78.63, false),
-(1, '2022-02-01', 83.40, false),
-(1, '2022-03-01', 91.04, false),
-(1, '2022-04-01', 93.83, false),
-(1, '2022-05-01', 96.37, false),
-(1, '2022-06-01', 98.75, false),
-(1, '2022-07-01', 100.63, false),
-(1, '2022-08-01', 108.96, false),
-(1, '2022-09-01', 110.18, false),
-(1, '2022-10-01', 107.31, false),
-(1, '2022-11-01', 91.73, false),
-(1, '2022-12-01', 84.85, false),
-(1, '2023-01-01', 87.01, true),
-(1, '2023-02-01', 91.60, true),
-(1, '2023-03-01', 99.23, true),
-(1, '2023-04-01', 102.27, true),
-(1, '2023-05-01', 104.73, true),
-(1, '2023-06-01', 107.09, true),
-(1, '2023-07-01', 110.46, true),
-(1, '2023-08-01', 117.63, true),
-(1, '2023-09-01', 117.52, true),
-(1, '2023-10-01', 115.18, true),
-(1, '2023-11-01', 100.39, true),
-(1, '2023-12-01', 94.56, true);
+-- INSERT INTO average_purchase_interval (client_id, avg_purchase_interval) VALUES
+-- (1, '{
+--         "Jan-2023": 10,
+--         "Feb-2023": 12,
+--         "Mar-2023": 13,
+--         "Apr-2023": 12,
+--         "May-2023": 11,
+--         "Jun-2023": 11,
+--         "Jul-2023": 9,
+--         "Aug-2023": 8,
+--         "Sep-2023": 8,
+--         "Oct-2023": 7,
+--         "Nov-2023": 9,
+--         "Dec-2023": 10
+--     }');
 
 
-
-INSERT INTO material_inventory_consumption (material_id, consumed_date, consumed_quantity, is_forcast) VALUES
-(1, '2021-01-01', 70.16, false),
-(1, '2021-02-01', 73.32, false),
-(1, '2021-03-01', 80.91, false),
-(1, '2021-04-01', 86.04, false),
-(1, '2021-05-01', 87.93, false),
-(1, '2021-06-01', 90.24, false),
-(1, '2021-07-01', 95.16, false),
-(1, '2021-08-01', 101.10, false),
-(1, '2021-09-01', 99.57, false),
-(1, '2021-10-01', 97.81, false),
-(1, '2021-11-01', 83.84, false),
-(1, '2021-12-01', 77.96, false),
-(1, '2022-01-01', 78.63, false),
-(1, '2022-02-01', 83.40, false),
-(1, '2022-03-01', 91.04, false),
-(1, '2022-04-01', 93.83, false),
-(1, '2022-05-01', 96.37, false),
-(1, '2022-06-01', 98.75, false),
-(1, '2022-07-01', 100.63, false),
-(1, '2022-08-01', 108.96, false),
-(1, '2022-09-01', 110.18, false),
-(1, '2022-10-01', 107.31, false),
-(1, '2022-11-01', 91.73, false),
-(1, '2022-12-01', 84.85, false),
-(1, '2023-01-01', 87.01, true),
-(1, '2023-02-01', 91.60, true),
-(1, '2023-03-01', 99.23, true),
-(1, '2023-04-01', 102.27, true),
-(1, '2023-05-01', 104.73, true),
-(1, '2023-06-01', 107.09, true),
-(1, '2023-07-01', 110.46, true),
-(1, '2023-08-01', 117.63, true),
-(1, '2023-09-01', 117.52, true),
-(1, '2023-10-01', 115.18, true),
-(1, '2023-11-01', 100.39, true),
-(1, '2023-12-01', 94.56, true);
+-- INSERT INTO product_inventory_consumption (product_id, consumed_date, consumed_quantity, is_forcast) VALUES
+-- (1, '2021-01-01', 70.16, false),
+-- (1, '2021-02-01', 73.32, false),
+-- (1, '2021-03-01', 80.91, false),
+-- (1, '2021-04-01', 86.04, false),
+-- (1, '2021-05-01', 87.93, false),
+-- (1, '2021-06-01', 90.24, false),
+-- (1, '2021-07-01', 95.16, false),
+-- (1, '2021-08-01', 101.10, false),
+-- (1, '2021-09-01', 99.57, false),
+-- (1, '2021-10-01', 97.81, false),
+-- (1, '2021-11-01', 83.84, false),
+-- (1, '2021-12-01', 77.96, false),
+-- (1, '2022-01-01', 78.63, false),
+-- (1, '2022-02-01', 83.40, false),
+-- (1, '2022-03-01', 91.04, false),
+-- (1, '2022-04-01', 93.83, false),
+-- (1, '2022-05-01', 96.37, false),
+-- (1, '2022-06-01', 98.75, false),
+-- (1, '2022-07-01', 100.63, false),
+-- (1, '2022-08-01', 108.96, false),
+-- (1, '2022-09-01', 110.18, false),
+-- (1, '2022-10-01', 107.31, false),
+-- (1, '2022-11-01', 91.73, false),
+-- (1, '2022-12-01', 84.85, false),
+-- (1, '2023-01-01', 87.01, true),
+-- (1, '2023-02-01', 91.60, true),
+-- (1, '2023-03-01', 99.23, true),
+-- (1, '2023-04-01', 102.27, true),
+-- (1, '2023-05-01', 104.73, true),
+-- (1, '2023-06-01', 107.09, true),
+-- (1, '2023-07-01', 110.46, true),
+-- (1, '2023-08-01', 117.63, true),
+-- (1, '2023-09-01', 117.52, true),
+-- (1, '2023-10-01', 115.18, true),
+-- (1, '2023-11-01', 100.39, true),
+-- (1, '2023-12-01', 94.56, true);
 
 
 
-
-
-
-
-
-
-
+-- INSERT INTO material_inventory_consumption (material_id, consumed_date, consumed_quantity, is_forcast) VALUES
+-- (1, '2021-01-01', 70.16, false),
+-- (1, '2021-02-01', 73.32, false),
+-- (1, '2021-03-01', 80.91, false),
+-- (1, '2021-04-01', 86.04, false),
+-- (1, '2021-05-01', 87.93, false),
+-- (1, '2021-06-01', 90.24, false),
+-- (1, '2021-07-01', 95.16, false),
+-- (1, '2021-08-01', 101.10, false),
+-- (1, '2021-09-01', 99.57, false),
+-- (1, '2021-10-01', 97.81, false),
+-- (1, '2021-11-01', 83.84, false),
+-- (1, '2021-12-01', 77.96, false),
+-- (1, '2022-01-01', 78.63, false),
+-- (1, '2022-02-01', 83.40, false),
+-- (1, '2022-03-01', 91.04, false),
+-- (1, '2022-04-01', 93.83, false),
+-- (1, '2022-05-01', 96.37, false),
+-- (1, '2022-06-01', 98.75, false),
+-- (1, '2022-07-01', 100.63, false),
+-- (1, '2022-08-01', 108.96, false),
+-- (1, '2022-09-01', 110.18, false),
+-- (1, '2022-10-01', 107.31, false),
+-- (1, '2022-11-01', 91.73, false),
+-- (1, '2022-12-01', 84.85, false),
+-- (1, '2023-01-01', 87.01, true),
+-- (1, '2023-02-01', 91.60, true),
+-- (1, '2023-03-01', 99.23, true),
+-- (1, '2023-04-01', 102.27, true),
+-- (1, '2023-05-01', 104.73, true),
+-- (1, '2023-06-01', 107.09, true),
+-- (1, '2023-07-01', 110.46, true),
+-- (1, '2023-08-01', 117.63, true),
+-- (1, '2023-09-01', 117.52, true),
+-- (1, '2023-10-01', 115.18, true),
+-- (1, '2023-11-01', 100.39, true),
+-- (1, '2023-12-01', 94.56, true);
