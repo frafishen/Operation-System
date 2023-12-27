@@ -111,7 +111,7 @@ CREATE TABLE material_inventory_consumption (
 );
 
 CREATE TABLE client_revenue (
-    sales_id SERIAL PRIMARY KEY,
+    revenue_id SERIAL PRIMARY KEY,
     client_id INTEGER REFERENCES client(client_id),
 	revenue JSON
 );
