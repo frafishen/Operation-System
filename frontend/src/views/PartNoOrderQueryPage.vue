@@ -30,7 +30,7 @@
         <div class="table_part">
             <el-table ref="singleTableRef" :data="productOrders" highlight-current-row style="width: 100%"
                 @current-change="handleRowClick">
-                <el-table-column type="index" width="50" />
+                <!-- <el-table-column type="index" width="50" /> -->
                 <el-table-column property="order_id" label="訂單編號" width="120" />
                 <el-table-column property="product_name" label="料號" width="120" />
                 <el-table-column property="machine_id" label="機台" />
