@@ -169,14 +169,14 @@ def get_product_orders():
     query = '''SELECT co.order_id, 
                     ocp.product_id, 
                     p.product_name, 
-                    m.machine_name, 
+                    ma.machine_name, 
                     co.created_at AS order_created_at, 
                     co.delivered_at AS order_delivered_at
                 FROM client_order co
                 INNER JOIN order_contain_product ocp ON co.order_id = ocp.order_id
                 INNER JOIN product p ON ocp.product_id = p.product_id
-                INNER JOIN model m ON p.model_id = m.model_id;
-                '''
+                INNER JOIN model m ON p.model_id = m.model_id
+                INNER JOIN machine ma ON m.machine_id = ma.machine_id;'''
     
     with conn.cursor(cursor_factory=psycopg2.extras.DictCursor) as cursor:
         cursor.execute(query)
