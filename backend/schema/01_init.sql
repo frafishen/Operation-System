@@ -36,7 +36,8 @@ CREATE TABLE model (
 );
 
 CREATE TABLE supplier (
-    supplier_id SERIAL PRIMARY KEY
+    supplier_id SERIAL PRIMARY KEY,
+    supplier_name VARCHAR(255)
 );
 
 CREATE TABLE material (
