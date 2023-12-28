@@ -56,6 +56,8 @@ const props = defineProps({
     }
 })
 
+console.log('props', props.chartData)
+
 const calculateDepth = (obj) => {
     if (!obj || !Array.isArray(obj.materials)) {
         return 1; // If materials array doesn't exist or is empty, it's the first level

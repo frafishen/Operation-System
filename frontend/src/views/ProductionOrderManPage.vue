@@ -36,42 +36,35 @@ const options = ref([
 
 // Pert Chart Data
 const chartData = ref({
-    PartNo: "B1",
+    part_no: "291029",
     quantity: 30,
     date: "2024-01-10",
     materials: [
         {
-            PartNo: "M_2",
+            part_no: "187340",
             quantity: 60,
             date: "2023-12-27",
             materials: [
                 {
-                    PartNo: "R_3",
+                    part_no: "938582",
                     quantity: 120,
                     date: "2023-12-20",
                     materials: []
                 }]
         },
         {
-            PartNo: "M_3",
+            part_no: "187348",
             quantity: 120,
             date: "2023-12-29",
             materials: [
                 {
-                    PartNo: "R_4",
+                    part_no: "938500",
                     quantity: 120,
                     date: "2023-12-20",
-                    materials: [
-                        {
-                            PartNo: "R_99",
-                            quantity: 120,
-                            date: "2023-12-20",
-                            materials: []
-                        }
-                    ]
+                    materials: []
                 },
                 {
-                    PartNo: "R_6",
+                    part_no: "938573",
                     quantity: 480,
                     date: "2023-12-23",
                     materials: []
@@ -85,18 +78,27 @@ const singleTableRef = ref()
 
 const tableData = [
     {
+        index: 0,
         type: '柵板式',
-        part_no: '290340',
+        part_no: '291029',
         inv_amount: 100,
     },
     {
+        index: 1,
         type: '柵板式',
-        part_no: '290341',
+        part_no: '291032',
         inv_amount: 120,
     },
     {
+        index: 2,
         type: '柵板式',
-        part_no: '290342',
+        part_no: '187340',
+        inv_amount: 10,
+    },
+    {
+        index: 3,
+        type: '柵板式',
+        part_no: '187348',
         inv_amount: 10,
     }
 ];
@@ -112,7 +114,98 @@ const handleSelectionChange = () => {
 const handleCurrentChange = (val) => {
     currentRow.value = val;
     console.log(val)
+    chartData.value = products.value[currentRow.value.index]
 };
+
+const products = ref([
+    {
+        name: "291029",
+        quantity: 30,
+        date: "2024-01-10",
+        materials: [{
+            name: "187340",
+            quantity: 60,
+            date: "2023-12-27",
+            materials: [{
+                name: "938582",
+                quantity: 120,
+                date: "2023-12-20",
+                material: []
+            }]
+        },
+        {
+            name: "187348",
+            quantity: 120,
+            date: "2023-12-29",
+            materials: [{
+                name: "938500",
+                quantity: 120,
+                date: "2023-12-20",
+                material: []
+            },
+            {
+                name: "938573",
+                quantity: 480,
+                date: "2023-12-23",
+                material: []
+            }
+            ]
+        }
+        ]
+    },
+    {
+        name: "291032",
+        quantity: 90,
+        date: "2024-01-10",
+        materials: [{
+            name: "187347",
+            quantity: 120,
+            date: "2023-12-29",
+            materials: [{
+                name: "928570",
+                quantity: 120,
+                date: "2023-12-20",
+                material: []
+            },
+            {
+                name: "928576",
+                quantity: 480,
+                date: "2023-12-23",
+                material: []
+            }
+            ]
+        }]
+    },
+    {
+        name: "187340",
+        quantity: 60,
+        date: "2023-12-29",
+        materials: [{
+            name: "938582",
+            quantity: 120,
+            date: "2023-12-20",
+            material: []
+        }]
+    },
+    {
+        name: "187348",
+        quantity: 120,
+        date: "2023-12-29",
+        materials: [{
+            name: "938500",
+            quantity: 120,
+            date: "2023-12-20",
+            material: []
+        },
+        {
+            name: "938573",
+            quantity: 480,
+            date: "2023-12-23",
+            material: []
+        }
+        ]
+    }
+])
 </script>
     
 <style scoped>
@@ -129,7 +222,7 @@ const handleCurrentChange = (val) => {
     /* border-left: 0.5px solid #ccc; */
     /* 外框樣式，可根據需要調整 */
     overflow: hidden;
-    z-index: -10;
+    /* z-index: -10; */
 }
 
 .select {
@@ -139,4 +232,13 @@ const handleCurrentChange = (val) => {
     z-index: 99;
 }
 
+.step-fade-enter-active,
+.step-fade-leave-active {
+    transition: opacity 0.5s;
+}
+
+.step-fade-enter,
+.step-fade-leave-to {
+    opacity: 0;
+}
 </style>
