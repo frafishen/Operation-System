@@ -19,15 +19,9 @@ services:
   frontend:
     build:
       context: ./frontend
-      dockerfile: frontend.dockerfile # Assuming Dockerfile is in the frontend directory
-    command: npm run dev
-    volumes:
-      - ./frontend:/app
-      - /app/node_modules
+      dockerfile: frontend.dockerfile # Adjust if your Dockerfile has a different name
     ports:
-      - "5173:5173" # The port your Vue.js dev server uses
-    environment:
-      - NODE_ENV=development
+      - "5173:80" # Nginx inside the container listens on port 80 by default
     depends_on:
       - web
 
