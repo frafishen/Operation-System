@@ -8,28 +8,23 @@
       </div>
     </template>
     <transition name="step-fade" mode="out-in">
-    <el-steps :active="lastActiveStageIndex" align-center finish-status="success" :key="stage_data">
-      <el-step v-for="stage in stage_data" :key="stage.name" :title="stage.name" :description="stage.description" />
-    </el-steps>
-  </transition>
+      <el-steps :active="lastActiveStageIndex" align-center finish-status="success" :key="stage_data">
+        <el-step v-for="stage in stage_data" :key="stage.name" :title="stage.name" :description="stage.description" />
+      </el-steps>
+    </transition>
   </el-card>
   <!--下方的表格-->
   <div class="table_part">
     <el-table ref="singleTableRef" :data="materialOrders" highlight-current-row style="width: 100%"
       @current-change="handleRowClick">
-      <!-- <el-table-column type="index" width="50" /> -->
-      <el-table-column property="material_order_id" label="訂單編號" width="120" />
-      <el-table-column property="material_name" label="原物料名稱" width="120" />
+      <el-table-column property="material_order_id" label="訂單編號" />
+      <el-table-column property="material_name" label="原物料名稱" min-width="90"/>
       <el-table-column property="quantity" label="訂單總額" />
-      <el-table-column property="created_at" label="訂購日期" />
-      <el-table-column property="delivered_at" label="交貨日期" />
-      <!-- <el-table-column property="progress" label="訂單進度" /> -->
+      <el-table-column property="created_at" label="訂購日期" min-width="140"/>
+      <el-table-column property="delivered_at" label="交貨日期" min-width="140"/>
     </el-table>
   </div>
 </template>
-  
-
-
   
 <script>
 import { ElTable, ElCard } from 'element-plus';
@@ -165,11 +160,13 @@ export default {
   /* min-height: 250px */
 }
 
-.step-fade-enter-active, .step-fade-leave-active {
+.step-fade-enter-active,
+.step-fade-leave-active {
   transition: opacity 0.5s;
 }
 
-.step-fade-enter, .step-fade-leave-to {
+.step-fade-enter,
+.step-fade-leave-to {
   opacity: 0;
 }
 </style>
