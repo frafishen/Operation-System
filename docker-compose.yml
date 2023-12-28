@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: ./backend
+      dockerfile: flask.dockerfile
+    command: python app.py
+    volumes:
+      - ./backend/app:/app
+    ports:
+      - "5001:80"
+    environment:
+      - FLASK_ENV=development
+      - DATABASE_URL=postgresql://mis_g1:mis@db:5432/os_db
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: frontend.dockerfile # Assuming Dockerfile is in the frontend directory
+    command: npm run dev
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    ports:
+      - "5173:5173" # The port your Vue.js dev server uses
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - web
+
+  db:
+    build:
+      context: ./backend
+      dockerfile: init-schema-postgres.dockerfile
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=mis_g1
+      - POSTGRES_PASSWORD=mis
+      - POSTGRES_DB=os_db
+
+volumes:
+  postgres_data:

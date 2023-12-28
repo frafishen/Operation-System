@@ -1,4 +1,8 @@
 # Quick Start
+### Start the services using Docker (under directory Operating-System):
+```sh
+docker compose up
+```
 
 ## FRONTEND
 To set up the frontend part of the project, follow these steps:
