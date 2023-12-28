@@ -15,6 +15,7 @@ import {
 import { BarChart, LineChart } from 'echarts/charts';
 import { UniversalTransition } from 'echarts/features';
 import { CanvasRenderer } from 'echarts/renderers';
+import { onMounted, ref, watch } from 'vue';
 
 echarts.use([
     ToolboxComponent,
@@ -28,19 +29,22 @@ echarts.use([
     TitleComponent
 ]);
 
-import { onMounted, ref } from 'vue';
+
 
 const chartRef = ref(null);
 
 const props = defineProps({
-  chartData: {
-    xAxisData: [],
-    yAxisRev: [],
-    yAxisGrowthRate: []
-  }
+    chartData: {
+        type: Object,
+        default: () => ({
+            xAxisData: [],
+            yAxisRev: [],
+            yAxisGrowthRate: []
+        })
+    }
 })
 
-onMounted(() => {
+const createChart = () => {
     if (chartRef.value) {
         const myChart = echarts.init(chartRef.value);
 
@@ -135,18 +139,32 @@ onMounted(() => {
             }
         };
         myChart.setOption(option);
+        return myChart;
     }
     // 讓圖表自適應容器大小
     return () => {
         window.removeEventListener('resize', resizeHandler);
     }
-})
+}
+
+let myChart = null;
+
+onMounted(() => {
+    myChart = createChart();
+});
+
+watch(() => props.chartData, () => {
+    if (myChart) {
+        myChart.dispose();
+    }
+    myChart = createChart();
+}, { deep: true });
 
 </script>
 
 <style>
 .chart-container {
-    width: calc((100%-18%)/2);
+    /* width: calc((100% - 18%)/2); */
     height: 250px;
 }
 </style>

@@ -49,8 +49,11 @@
   
 <script setup>
 import { ref, onMounted, computed } from 'vue';
+
 const props = defineProps({
-    chartData: {}
+    chartData: {
+        type: Object
+    }
 })
 
 const calculateDepth = (obj) => {

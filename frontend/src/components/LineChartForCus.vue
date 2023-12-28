@@ -15,12 +15,16 @@ import {
 import { LineChart } from 'echarts/charts';
 import { UniversalTransition } from 'echarts/features';
 import { CanvasRenderer } from 'echarts/renderers';
+import { onMounted, ref, watch } from 'vue';
 
 const props = defineProps({
-  chartData: {
-    xAxisData: [],
-    yAxisInterval: []
-  }
+    chartData: {
+        type: Object,
+        default: () => ({
+            xAxisData: [],
+            yAxisInterval: []
+        })
+    }
 })
 
 // 使用相關模組
@@ -36,11 +40,11 @@ echarts.use([
     UniversalTransition
 ]);
 
-import { onMounted, ref } from 'vue';
+
 
 const chartRef = ref(null);
 
-onMounted(() => {
+const createChart = () => {
     if (chartRef.value) {
         const myChart = echarts.init(chartRef.value);
         const option = {
@@ -75,7 +79,7 @@ onMounted(() => {
                     snap: true
                 }
             },
-            legend: { 
+            legend: {
                 data: ['平均購買間隔'],
                 top: 25 // 調整 legend 的位置
             },
@@ -100,12 +104,25 @@ onMounted(() => {
             }
         };
         myChart.setOption(option);
+        return myChart
     }
+};
+
+let myChart = null
+onMounted(() => {
+  myChart = createChart();
 });
+
+watch(() => props.chartData, () => {
+  if (myChart) {
+    myChart.dispose(); // Dispose the current chart
+  }
+  myChart = createChart(); // Create a new chart instance
+}, { deep: true });
 </script>
   
 <style>
-/* CSS 样式 */
+
 .chart-container {
     width: calc((100%-18%)/2);
     height: 250px;
