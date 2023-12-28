@@ -105,7 +105,7 @@ const createChart = () => {
                     name: 'Growth Rate (%)',
                     // min: 0,
                     // max: 25,
-                    interval: 5,
+                    interval: 10,
                 }
             ],
             series: [

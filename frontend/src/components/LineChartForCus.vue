@@ -26,6 +26,7 @@ const props = defineProps({
         })
     }
 })
+// console.log('in Component', props.chartData.xAxisData)
 
 // 使用相關模組
 echarts.use([
@@ -33,7 +34,6 @@ echarts.use([
     ToolboxComponent,
     TooltipComponent,
     GridComponent,
-    VisualMapComponent,
     LegendComponent,
     LineChart,
     CanvasRenderer,
@@ -47,6 +47,12 @@ const chartRef = ref(null);
 const createChart = () => {
     if (chartRef.value) {
         const myChart = echarts.init(chartRef.value);
+        
+        const resizeHandler = () => {
+            myChart.resize();
+        };
+        window.addEventListener('resize', resizeHandler)
+        
         const option = {
             title: {
                 text: "過去半年平均購買間隔時間",
@@ -105,6 +111,10 @@ const createChart = () => {
         };
         myChart.setOption(option);
         return myChart
+    }
+    // 讓圖表自適應容器大小
+    return () => {
+        window.removeEventListener('resize', resizeHandler);
     }
 };
 
