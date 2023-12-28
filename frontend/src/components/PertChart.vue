@@ -4,7 +4,7 @@
             <el-card :style="getCardStyle(-1)">
                 <template #header>
                     <div class="card-header" style="text-align: center;">
-                        <span>料號: {{ props.chartData.PartNo }}</span>
+                        <span>{{ props.chartData.part_no }}</span>
                     </div>
                 </template>
                 <div class="set-text">
@@ -20,7 +20,7 @@
             <el-card v-for="(subItem, subIndex) in props.chartData.materials" :style="getCardStyle(subIndex)">
                 <template #header>
                     <div class="card-header" style="text-align: center;">
-                        <span>料號: {{ subItem.PartNo }}</span>
+                        <span>{{ subItem.part_no }}</span>
                     </div>
                 </template>
                 <div class="set-text">
@@ -34,7 +34,7 @@
                 <el-card v-for="(subSubItem, subSubIndex) in subItem.materials" :style="getCardStyle(subIndex)">
                     <template #header>
                         <div class="card-header" style="text-align: center;">
-                            <span>料號: {{ subSubItem.PartNo }}</span>
+                            <span>{{ subSubItem.part_no }}</span>
                         </div>
                     </template>
                     <div class="set-text">
