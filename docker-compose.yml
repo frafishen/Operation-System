@@ -19,9 +19,9 @@ services:
   frontend:
     build:
       context: ./frontend
-      dockerfile: frontend.dockerfile # Adjust if your Dockerfile has a different name
+      dockerfile: frontend.dockerfile
     ports:
-      - "5173:80" # Nginx inside the container listens on port 80 by default
+      - "5173:80"
     depends_on:
       - web
 
