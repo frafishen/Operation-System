@@ -11,7 +11,6 @@
         <div class="card-header">
           <span>訂單編號: {{ order_data.id }}</span>
           <span>交貨日期: {{ order_data.lead_time }}</span>
-          <!-- <el-button class="button" text>Operation button</el-button> -->
         </div>
       </template>
       <!--card body-->
@@ -24,7 +23,7 @@
               <span class="percentage-label">{{ step.process }}</span>
             </template>
             <template v-if="step.percentage === 100">
-              <el-button type="success" :icon="Check" circle />
+              <el-button type="success" circle><el-icon><Check /></el-icon></el-button>
               <span class="percentage-label">{{ step.process }}</span>
             </template>
           </el-progress>
@@ -49,6 +48,7 @@
 <script>
 import { ElTable, ElCard } from 'element-plus';
 import { fetchProductOrders, fetchProductOrderProgress } from '@/api/PartNoOrderQueryAPI';
+import { Check } from '@element-plus/icons-vue'
 
 export default {
   data() {
