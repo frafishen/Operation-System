@@ -5,13 +5,13 @@
       <div class="card-header">
         <span>訂單編號: {{ order_data.material_order_id }}</span>
         <span>交貨日期: {{ order_data.delivered_at }}</span>
-        <!-- <el-button class="button" text>Operation button</el-button> -->
       </div>
     </template>
-    <el-steps :active="lastActiveStageIndex" align-center>
+    <transition name="step-fade" mode="out-in">
+    <el-steps :active="lastActiveStageIndex" align-center finish-status="success" :key="stage_data">
       <el-step v-for="stage in stage_data" :key="stage.name" :title="stage.name" :description="stage.description" />
     </el-steps>
-    <!-- <div v-for="o in 4" :key="o" class="text item">{{ 'List item ' + o }}</div> -->
+  </transition>
   </el-card>
   <!--下方的表格-->
   <div class="table_part">
@@ -25,10 +25,6 @@
       <el-table-column property="delivered_at" label="交貨日期" />
       <!-- <el-table-column property="progress" label="訂單進度" /> -->
     </el-table>
-    <!-- <div style="padding: 0.5% 2%;">
-            <el-button @click="setCurrent(tableData[1])">Select second row</el-button>
-            <el-button @click="setCurrent()">Clear selection</el-button>
-        </div> -->
   </div>
 </template>
   
@@ -167,5 +163,13 @@ export default {
   width: calc(100% - 18%);
   height: calc(100% - 7% - 45%);
   /* min-height: 250px */
+}
+
+.step-fade-enter-active, .step-fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.step-fade-enter, .step-fade-leave-to {
+  opacity: 0;
 }
 </style>
