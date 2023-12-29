@@ -325,15 +325,16 @@ def get_average_purchase_time(id):
 @app.route('/order/<id>/pert_chart', methods=['GET'])
 def get_pert_chart(id):
     conn = get_db_connection()
-    # query = f''
+    query = f'SELECT ocp.product_id, ocp.quantity ' \
+            f'FROM order_contain_product ocp ' \
+            f'WHERE ocp.order_id = {id};'
 
-    # with conn.cursor(cursor_factory=psycopg2.extras.DictCursor) as cursor:
-    #     cursor.execute(query)
-    #     data = cursor.fetchall()
+    with conn.cursor(cursor_factory=psycopg2.extras.DictCursor) as cursor:
+        cursor.execute(query)
+        data = cursor.fetchall()
 
-
-    order_data = []
-    info = form_pert_chart_tree(order_data)
+    result = [dict(row) for row in data]
+    info = form_pert_chart_tree(result)
 
     return jsonify({'chart_info': info})
 
