@@ -36,35 +36,35 @@ const options = ref([
 
 // Pert Chart Data
 const chartData = ref({
-    part_no: "291029",
+    part_no: "QuantumPort8",
     quantity: 30,
     date: "2024-01-10",
     materials: [
         {
-            part_no: "187340",
+            part_no: "CyberLink42",
             quantity: 60,
             date: "2023-12-27",
             materials: [
                 {
-                    part_no: "938582",
+                    part_no: "NanoGrid41",
                     quantity: 120,
                     date: "2023-12-20",
                     materials: []
                 }]
         },
         {
-            part_no: "187348",
+            part_no: "ElectraNode70",
             quantity: 120,
             date: "2023-12-29",
             materials: [
                 {
-                    part_no: "938500",
+                    part_no: "Screw Set",
                     quantity: 120,
                     date: "2023-12-20",
                     materials: []
                 },
                 {
-                    part_no: "938573",
+                    part_no: "Conductive Gel",
                     quantity: 480,
                     date: "2023-12-23",
                     materials: []
@@ -80,26 +80,26 @@ const tableData = [
     {
         index: 0,
         type: '柵板式',
-        part_no: '291029',
-        inv_amount: 100,
+        part_no: 'QuantumPort8',
+        inv_amount: 20,
     },
     {
         index: 1,
         type: '柵板式',
-        part_no: '291032',
-        inv_amount: 120,
+        part_no: 'NanoGrid7',
+        inv_amount: 15,
     },
     {
         index: 2,
         type: '柵板式',
-        part_no: '187340',
-        inv_amount: 10,
+        part_no: 'CyberLink42',
+        inv_amount: 15,
     },
     {
         index: 3,
         type: '柵板式',
-        part_no: '187348',
-        inv_amount: 10,
+        part_no: 'ElectraNode70',
+        inv_amount: 5,
     }
 ];
 
@@ -119,33 +119,33 @@ const handleCurrentChange = (val) => {
 
 const products = ref([
     {
-        part_no: "291029",
-        quantity: 30,
+        part_no: "QuantumPort8",
+        quantity: 20,
         date: "2024-01-10",
         materials: [{
-            part_no: "187340",
-            quantity: 60,
+            part_no: "CyberLink42",
+            quantity: 20,
             date: "2023-12-27",
             materials: [{
-                part_no: "938582",
-                quantity: 120,
+                part_no: "NanoGrid41",
+                quantity: 40,
                 date: "2023-12-20",
                 material: []
             }]
         },
         {
-            part_no: "187348",
-            quantity: 120,
+            part_no: "ElectraNode70",
+            quantity: 20,
             date: "2023-12-29",
             materials: [{
-                part_no: "938500",
-                quantity: 120,
+                part_no: "Screw Set",
+                quantity: 60,
                 date: "2023-12-20",
                 material: []
             },
             {
-                part_no: "938573",
-                quantity: 480,
+                part_no: "Conductive Gel",
+                quantity: 60,
                 date: "2023-12-23",
                 material: []
             }
@@ -154,21 +154,21 @@ const products = ref([
         ]
     },
     {
-        part_no: "291032",
+        part_no: "NanoGrid7",
         quantity: 90,
         date: "2024-01-10",
         materials: [{
-            part_no: "187347",
+            part_no: "NanoGrid79",
             quantity: 120,
             date: "2023-12-29",
             materials: [{
-                part_no: "928570",
+                part_no: "Mounting Brackets",
                 quantity: 120,
                 date: "2023-12-20",
                 material: []
             },
             {
-                part_no: "928576",
+                part_no: "Circuit Board",
                 quantity: 480,
                 date: "2023-12-23",
                 material: []
@@ -177,29 +177,29 @@ const products = ref([
         }]
     },
     {
-        part_no: "187340",
-        quantity: 60,
+        part_no: "CyberLink42",
+        quantity: 20,
         date: "2023-12-29",
         materials: [{
-            part_no: "938582",
-            quantity: 120,
+            part_no: "NanoGrid41",
+            quantity: 40,
             date: "2023-12-20",
             material: []
         }]
     },
     {
-        part_no: "187348",
-        quantity: 120,
+        part_no: "ElectraNode70",
+        quantity: 20,
         date: "2023-12-29",
         materials: [{
-            part_no: "938500",
-            quantity: 120,
+            part_no: "Screw Set",
+            quantity: 60,
             date: "2023-12-20",
             material: []
         },
         {
-            part_no: "938573",
-            quantity: 480,
+            part_no: "Conductive Gel",
+            quantity: 60,
             date: "2023-12-23",
             material: []
         }
