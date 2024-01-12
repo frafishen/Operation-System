@@ -36,10 +36,10 @@
         @current-change="handleRowClick">
         <!-- <el-table-column type="index" width="50" /> -->
         <el-table-column property="order_id" label="訂單編號" width="120" />
-        <el-table-column property="product_name" label="料號" width="120" />
-        <el-table-column property="machine_id" label="機台" />
+        <el-table-column sortable property="product_name" label="料號" width="140" />
+        <!-- <el-table-column property="machine_id" label="機台" /> -->
         <el-table-column property="order_created_at" label="訂購日期" />
-        <el-table-column property="order_delivered_at" label="交貨日期" />
+        <el-table-column property="order_delivered_at" label="交貨日期"/>
       </el-table>
     </div>
   </el-main>
