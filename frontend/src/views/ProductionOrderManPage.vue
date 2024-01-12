@@ -119,32 +119,32 @@ const handleCurrentChange = (val) => {
 
 const products = ref([
     {
-        name: "291029",
+        part_no: "291029",
         quantity: 30,
         date: "2024-01-10",
         materials: [{
-            name: "187340",
+            part_no: "187340",
             quantity: 60,
             date: "2023-12-27",
             materials: [{
-                name: "938582",
+                part_no: "938582",
                 quantity: 120,
                 date: "2023-12-20",
                 material: []
             }]
         },
         {
-            name: "187348",
+            part_no: "187348",
             quantity: 120,
             date: "2023-12-29",
             materials: [{
-                name: "938500",
+                part_no: "938500",
                 quantity: 120,
                 date: "2023-12-20",
                 material: []
             },
             {
-                name: "938573",
+                part_no: "938573",
                 quantity: 480,
                 date: "2023-12-23",
                 material: []
@@ -154,21 +154,21 @@ const products = ref([
         ]
     },
     {
-        name: "291032",
+        part_no: "291032",
         quantity: 90,
         date: "2024-01-10",
         materials: [{
-            name: "187347",
+            part_no: "187347",
             quantity: 120,
             date: "2023-12-29",
             materials: [{
-                name: "928570",
+                part_no: "928570",
                 quantity: 120,
                 date: "2023-12-20",
                 material: []
             },
             {
-                name: "928576",
+                part_no: "928576",
                 quantity: 480,
                 date: "2023-12-23",
                 material: []
@@ -177,28 +177,28 @@ const products = ref([
         }]
     },
     {
-        name: "187340",
+        part_no: "187340",
         quantity: 60,
         date: "2023-12-29",
         materials: [{
-            name: "938582",
+            part_no: "938582",
             quantity: 120,
             date: "2023-12-20",
             material: []
         }]
     },
     {
-        name: "187348",
+        part_no: "187348",
         quantity: 120,
         date: "2023-12-29",
         materials: [{
-            name: "938500",
+            part_no: "938500",
             quantity: 120,
             date: "2023-12-20",
             material: []
         },
         {
-            name: "938573",
+            part_no: "938573",
             quantity: 480,
             date: "2023-12-23",
             material: []
