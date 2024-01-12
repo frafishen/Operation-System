@@ -9,8 +9,8 @@
     <el-card class="box-card is-plain">
       <template #header>
         <div class="card-header">
-          <span>訂單編號: {{ order_data.id }}</span>
-          <span>交貨日期: {{ order_data.lead_time }}</span>
+          <span>產品訂單進度</span>
+          <!-- <span>交貨日期: {{ order_data.lead_time }}</span> -->
         </div>
       </template>
       <!--card body-->
