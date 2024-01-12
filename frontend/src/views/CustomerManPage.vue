@@ -302,5 +302,7 @@ const handleCurrentChange = (val) => {
   /* 兩列，每列平均分配空間 */
   gap: 16px;
   /* 可以根據需要調整列之間的間距 */
+  margin-top: 0;
+  padding-top: 0;
 }
 </style>
