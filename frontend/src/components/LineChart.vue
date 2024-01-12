@@ -65,6 +65,7 @@ const createChart = () => {
       },
       legend: {
         data: ['Sales', 'Forcast'],
+        top: -
       },
       series: [
         {
@@ -113,5 +114,6 @@ watch(() => props.chartData, () => {
 .chart-container {
     width: calc(100%-18%);
     height: 250px;
+    margin-top: 15px;
 }
 </style>
