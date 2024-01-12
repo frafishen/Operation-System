@@ -65,7 +65,7 @@ const createChart = () => {
       },
       legend: {
         data: ['Sales', 'Forcast'],
-        top: -
+        top: -5
       },
       series: [
         {
